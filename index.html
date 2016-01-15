@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+    
+    <body>
+        <a href="/">Home</a>
+        
+        <!-- List of all the movies on the left, one being selected-->
+        <section id="movies">
+        </section>
+        <!--<section id="movies">
+            <article class="movie selected">
+                <h1>The Artist </h1>
+            </article>
+            <article class="movie">
+                <h1>La Dolce Vita</h1>
+            </article>
+        </section>-->
+        
+        <nav id="controls">
+            <a href="#" class="previous" data-action="previous">Previous</a>
+            <a href="#" class="next" data-action="next">Next</a>
+        </nav>
+    </body>
+    
+    <!-- Will include all libraries here later -->
+    <script src="bower_components\jquery\dist\jquery.min.js"> </script>
+    <script src="bower_components\underscore\underscore-min.js"> </script>
+	<script src="bower_components\backbone\backbone.js"> </script>
+    <script src="js\movieflix\models\movie.js"></script>
+    <script src="js\movieflix\collections\movies.js"></script>	
+    <script src="js\movieflix\views\movie.js"></script>
+    <script src="js\movieflix\views\moviesList.js"></script>
+    <script src="js\movieflix\routers\router.js"></script>
+    <script src="js\app.js"></script>
+    
+    
+    <!--Not sure what this does. Currently just copying what seems applicable from claude's examples-->
+    <!--<script data-main="./js/config.js" src="../bower_components/requirejs/require.js"></script>-->
+    
+    
+</html>
+      

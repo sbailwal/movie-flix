@@ -10,14 +10,14 @@ define([
         model: Model, 
         
         initialize: function(){
-            console.log("Initialize function called on movies collection!");
+            //console.log("Initialize function called on movies collection!");
         },     
         
         //unselect all models
         resetSelected: function() {
             this.each(function(model) {
                 model.set({selected: false});
-            //console.log("current:" + model.get('title') + " is " + model.get('selected'));
+                //console.log("current:" + model.get('title') + " is " + model.get('selected'));
             });
         },
         

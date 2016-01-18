@@ -8,20 +8,20 @@ define([
     
     //run function is called by config.js to run the application!
     var run = function() {   
-        console.log("Sweta");
         bootMyRouter();
-        console.log("Sweta1");
+        console.log("Application started");
     };
   
     //this function renders the view by instantiating router and calling Backbone.history.start
     var bootMyRouter = function(){     
         //manually creating collection of movies model
-        var movies = new Collection([{"id":1, "title": "Funny Ninja"},
-        {"id":2, "title": "Wimpy Kid"},
-        {"id":3, "title": "Let us gobble up.. FOOD!"},
-        {"id":4, "title": "Frozen"},
-        {"id":5, "title": "Snowman"},
-        {"id":6, "title": "The Christmas Story"}] );
+        var movies = new Collection([
+            {"id":1, "title": "Funny Ninja"},
+            {"id":2, "title": "Wimpy Kid"},
+            {"id":3, "title": "Kung Fu Panda"},
+            {"id":4, "title": "Frozen"},
+            {"id":5, "title": "Snowman"},
+            {"id":6, "title": "The Christmas Story"}] );
 
         //manual creation must eventually be replaced by extracting mock-data from json file
         //var data = ('../mock-data/movies.json');

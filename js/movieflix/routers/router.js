@@ -17,15 +17,13 @@ define([
     },
     
     selectMovies: function(id) {
-        //console.log("select from router called! Router working!!!!");
-        
         this.movies.selectByID(id); //calling select on a specific movie, to highlight the selected one
-        this.moviesListView.render();
+        //this.moviesListView.render(); //this was painiting list twice
         
-        this.navigate("/movies/" + id); //router can update the url in the browser to whatever we set here
+        //this.navigate("/movies/" + id); //router can update the url in the browser to whatever we set here
         //this.navigate("/urlSetByRouter/movies/" + id);
         
-        $(document.body).append("<br>(Append-not repaint) Select movie has been called ");
+        $(document.body).append("<br> Select movie has been called ");
     },
     
     showMain: function(){
@@ -47,9 +45,9 @@ define([
             el: options.el,  
             collection: options.movies
         });
-        
+
         /*
-        Chapter 4: Navigating:
+        Navigating:
         Not much idea about Navigating, hence just commenting it out. Will do it later
         Here we are extending the class listview by adding router reference to it.
         this way, our movielistview(ViewMovie class) gets the ablilty to use router functions like "this.router.navigate("movies/" + this.model.id)}"

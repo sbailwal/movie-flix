@@ -11,7 +11,7 @@ define([
         },
         
         initialize: function(){
-            console.log("Initialize function called on movie!");
+            //console.log("Initialize function called on movie!");
         }
     });
     

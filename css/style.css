@@ -10,12 +10,12 @@
     width: 240px;
     margin: 10px;
     background-color: mediumblue;
-    color: wh;
+    color: black;
     float: left;
 }
 
 .selected{
-    border: 2px royalblue solid;    
+    border:5px royalblue solid;
 }
 
 #movies{

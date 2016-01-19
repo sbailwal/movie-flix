@@ -5,12 +5,12 @@ define([
     
     "use strict";
    
-    var ViewMoviesList = Backbone.View.extend({
+    var ViewList = Backbone.View.extend({
     //tagname: 'section',
     el: "#movies",
         
         render: function(){
-            console.log("List View render being called");
+            //console.log("List View render being called");
             
             //the collection is the one (movieList) passed in constructor of ViewList
             //this line takes this collection and creates an view (movieView) of each      
@@ -27,8 +27,8 @@ define([
             //adding initialize function 
         initialize: function(){
         //this.render(); //cause we don't have to wait for fetching data, doing it manually in this example
-        console.log("List view is being initialized")
+        //console.log("List view is being initialized")
         }
     }); 
-     return ViewMoviesList;
+     return ViewList;
 });

@@ -6,7 +6,7 @@ define([
 ], function(Backbone, Model) {
     "use strict";
 
-    var CollectionMovie = Backbone.Collection.extend({
+    var Collection = Backbone.Collection.extend({
         model: Model, 
         
         initialize: function(){
@@ -31,5 +31,5 @@ define([
         }
     });
     
-    return CollectionMovie;    
+    return Collection;    
 });

@@ -9,7 +9,7 @@ define([
     //run function is called by config.js to run the application!
     var run = function() {   
         bootMyRouter();
-        console.log("Application started");
+        console.log("Application started..");
     };
   
     //this function renders the view by instantiating router and calling Backbone.history.start

@@ -6,7 +6,7 @@ define([
    "use strict";
 
     //DOM element (<article class="movie">) is being represented with this view
-    var MovieView = Backbone.View.extend({
+    var View = Backbone.View.extend({
         tagName: 'article',
         
         className: 'movie',
@@ -18,8 +18,8 @@ define([
         during the build process. We will meet a number of strategies for this later when
         we discuss build processes.
         */
-        template: "<h3><%=title%></h1>", //adding template
-        //template: "<h1><a href='/#movies/<%=id%>'><%=title%></a></h1>", //adding template
+        //template: "<h3><%=title%></h1>", //adding template
+        template: "<h1><a href='/#movies/<%=id%>'><%=title%></a></h1>", //adding template
         
         /**
             Note that there is a special syntax used to address the reference of a view to the DOM: this.$el . 
@@ -66,7 +66,8 @@ define([
         
         //attaching event handler to this DOM element, i.e. View
         events: {
-            'click': '_selectMovie' //_functionName denotes private method
+            //commented this out as I want router to do the selection using href in templates
+           //'click': '_selectMovie' //_functionName denotes private method
         },
         
         _selectMovie: function(event) {
@@ -74,7 +75,7 @@ define([
             //console.log($(event.currentTarget).html());
             
             this.model.collection.selectByID(this.model.id);
-            console.log("You clicked on " + this.model.get("title"));
+            //console.log("You clicked on " + this.model.get("title"));
             
             //commenting out all router.navigate stuff.. not confident on it and see no use of it as of now
             //it needs code changes in initialization for views and router 
@@ -96,6 +97,6 @@ define([
         }
     }); 
     
-    return MovieView;
+    return View;
 });
 

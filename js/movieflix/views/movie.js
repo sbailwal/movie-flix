@@ -67,7 +67,7 @@ define([
         //attaching event handler to this DOM element, i.e. View
         events: {
             //commented this out as I want router to do the selection using href in templates
-           //'click': '_selectMovie' //_functionName denotes private method
+           'click': '_selectMovie' //_functionName denotes private method
         },
         
         _selectMovie: function(event) {

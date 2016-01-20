@@ -21,7 +21,7 @@ define([
         //this.moviesListView.render(); //this was painiting list twice
 
         //this.navigate("/movies/" + id); //router can update the url in the browser to whatever we set here
-        this.navigate("urlSetByRouter/movies/" + id);
+        //this.navigate("urlSetByRouter/movies/" + id);
         
         $(document.body).append("<br> Select movie has been called ");
     },

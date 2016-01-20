@@ -6,8 +6,8 @@ define([
     "use strict";
    
     var ViewList = Backbone.View.extend({
-    //tagname: 'section',
-    el: "#movies",
+        //tagname: 'section',
+        el: "#movies",
         
         render: function(){
             //console.log("List View render being called");

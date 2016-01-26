@@ -31,7 +31,8 @@ define([
         //two steps (1) instantiate router & (2)enable backbone history, or the view will not render 
         $(document).ready(function() {
             //el is passed as "options" in router's constructor where we access it saying "el: options.el"
-            var router = new Router({el: $('#movies'), movies:movies}); //instantiating router
+            //var router = new Router({el: $('#movies'), movies:movies}); //instantiating router
+            var router = new Router({movies:movies}); //will set el in listView itself. Not passing el here
             
             //Monitoring route changes happen by calling start() on the history API
             Backbone.history.start({ 

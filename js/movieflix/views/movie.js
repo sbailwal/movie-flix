@@ -5,11 +5,9 @@ define([
    
    "use strict";
 
-    //DOM element (<article class="movie">) is being represented with this view
     var View = Backbone.View.extend({
-        tagName: 'tr', //change it to tr
-        //tagName: 'article',
-        className: 'movie',
+        tagName: 'li', 
+        className: 'list-group-item', //this is a bootstrap css class
         
         /*
         With templates, we easily can arrange many HTML nodes. However, at their core,
@@ -19,8 +17,9 @@ define([
         we discuss build processes.
         */
         //template: "<h3><%=title%></h1>", //adding template
-        template: "<a href='/#movies/<%=id%>'><%=title%></a>", //adding template
-        //template: "<td><a href='/#movies/<%=id%>'><%=title%></a></td>", //adding template
+        //template: "<a href='/#movies/<%=id%>'><%=title%></a>", //adding template
+        // template: "<td><a href='/#movies/<%=id%>'><%=title%></a></td>", //adding template
+        template: "<a href='/#movies/<%=id%>'><%=title%></a>", //adding template//<li class="list-group-item">
         /**
             Note that there is a special syntax used to address the reference of a view to the DOM: this.$el . 
             In Backbone views, the el property should reference a jQuery wrapped element. 
@@ -29,7 +28,6 @@ define([
         */    
         
         //render function actually transforms Backbone.View into DOM element
-        //DOM node is filled with the movie title from the model 
         render: function() {
             //We must “compile” the template. We do this with _.template(…). 
             //Once the template is compiled, we pass data with this.model.toJSON(). 
@@ -40,8 +38,7 @@ define([
             this.$el.html(tmpl(this.model.attributes));
             this.$el.toggleClass('selected', this.model.get('selected'));
             
-            //returning the view object, this way it allows you to chain other method calls on render()
-            return this;
+            return this; //returning the view object, this way it allows to chain other method calls on render()
         },
         
         /**
@@ -66,7 +63,6 @@ define([
         
         //attaching event handler to this DOM element, i.e. View
         events: {
-            //commented this out as I want router to do the selection using href in templates
            'click': '_selectMovie' //_functionName denotes private method
         },
         

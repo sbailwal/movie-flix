@@ -37,13 +37,9 @@ define([
         //Funny Fact: We can change app.js to not pass "movies:movies" as input param during router's instantiation. Still we can access it here as "this.movies = movies"
         //Whatever var is created in app.js, becomes automatically available here. Funny but true
         this.movies = options.movies; 
-            
-        //getting the list view with movies collection in it
-        //this.moviesListView = moviesListView;//this is coming from app.js, it's a var created there      
-        //instead of getting, creating the list view using the movies collection
         this.moviesListView = new MoviesListView({
-            el: options.el,  
-            collection: options.movies
+            //el: "#movies", //options.el, //setting in listView itself  
+            collection: options.movies, 
         });
 
         /*

@@ -22,3 +22,10 @@
     width: 220px;
     float: left;
 }
+body {
+	padding-top: 5em;
+}
+
+.main-content {
+	padding-bottom: 2em;
+}

@@ -32,7 +32,23 @@
                         <li><a href="/test.html">Test Area</a></li>                                                
                         <li><a href="http://www.google.com" target="_blank">Search on Google</a></li>
                     </ul>
+                    
+                    <!--Adding search button to nav-bar-->
+                    <div class="col-sm-3 col-md-3 pull-right">
+                        <form class="navbar-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="search-term" id="search-term">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>
+                            </div>      
+                        </form>
+                    </div>
                 </div>
+                
+                
             </div>
         </nav>
         <!--End of Step 1: Nav bar-->
@@ -47,8 +63,7 @@
                 <p>Bootstrap can be boring, but movies are fun. 
                     At <a href="/" target="_blank">Movie Flix</a>, we help you become Bootstrap ninja while watching movies. 
                     The more you watch, the more you learn!
-                </p>
-                
+                </p>              
                 <p>
                     <a href="/index.html" class="btn btn-success btn-lg">Get started today</a>
                 </p>

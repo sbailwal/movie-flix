@@ -36,6 +36,19 @@
                         <li><a href="/test.html">Test Area</a></li>                                                       
                         <li><a href="http://www.google.com" target="_blank">Search on Google</a></li>
                     </ul>
+                    <!--Adding search button to nav-bar-->
+                    <div class="col-sm-3 col-md-3 pull-right">
+                        <form class="navbar-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="search-term" id="search-term">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>
+                            </div>      
+                        </form>
+                    </div> 
                 </div>
             </div> <!--end /container -->
         </nav>
@@ -46,7 +59,7 @@
         <div class="container">
             <!--<h3>Using Fixed Layout</h3>-->
             <div class="page-header">
-                <h3>Tables <small>Backbone</small></h3>
+                <h3>Tables <small>Backbone Table</small></h3>
             </div>
             
             <!--Row 1: creating two columns: 1 for list and other for entry form-->          
@@ -62,16 +75,30 @@
                         </tbody>
                     </table>
                 </div>  
-                <!--2nd col for form etc-->
-                <div class="col-xs-6"><h4>Login</h4>
-                   <h2>Tools Used</h2>
-                    <p>
-                        <ul class="list-group">
-                            <li class="list-group-item"> Movieflix is a <a href="http://backbonejs.org/" target="_blank">Backbone.js application </a></li>
-                            <li class="list-group-item"> It uses <a href="http://bower.io/" target="_blank">Bower</a> for package management</li>
-                            <li class="list-group-item"> It leverages <a href="http://getbootstrap.com/" target="_blank">Bootstrap UI framework</a></li>
-                        </ul>                        
-                    </p>
+                <!--2nd col for 'Movie Details'-->
+                <div class="col-xs-4">
+                    <div class ="jumbotron">
+                        <h4>Details</h4>
+                        Details of the selected movie will be listed here.
+                        
+                    </div>
+                </div>
+                <!--3rd col for login form-->
+                <div class="col-xs-4"><h4>Member Login</h4>
+                    <form>
+                        <div class="form-group">
+                           <label for="inputEmail">Email</label>
+                           <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
                 </div>
             </div> <!--end /row-->
             

@@ -1,9 +1,9 @@
 .movie{
     width: 160px;
-    height: 99px;
-    background-color: #13a4ce;
-    color:black;
-    margin: 10px;    
+    height: 50px;
+    /*background-color: lightgray;*/
+    /*color:black;*/
+    margin: 5px;
 }
 
 .details{
@@ -15,13 +15,14 @@
 }
 
 .selected{
-    border:5px royalblue solid;
+    border:1px royalblue solid;
 }
 
-#movies{
+/*#movies{
     width: 220px;
-    float: left;
-}
+    float: left;  
+}*/
+
 body {
 	padding-top: 5em;
 }
@@ -29,3 +30,11 @@ body {
 .main-content {
 	padding-bottom: 2em;
 }
+
+changing bootstrap defaults
+* {
+   font-size: 14px;
+   line-height: 2;
+   /*font-weight: bold;
+}
+

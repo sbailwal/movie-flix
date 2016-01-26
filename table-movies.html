@@ -31,9 +31,9 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="nav navbar-nav">
                         <li><a href="http://localhost:8080">Home</a></li>
-                        <li class="active"><a href="/list-movies.html">Movies</a></li>                        
-                        <!--<li><a href="/test.html">Test Area</a></li>                        -->
-                        <li><a href="/table-movies.html">Table</a></li>                
+                        <li><a href="/list-movies.html">Movies</a></li>                        
+                        <!--<li class="active"><a href="/test.html">Test Area</a></li>                        -->
+                        <li class="active"><a href="/table-movies.html">Table</a></li>                
                         <li><a href="http://www.google.com" target="_blank">Search on Google</a></li>
                     </ul>
                 </div>
@@ -41,22 +41,26 @@
         </nav>
         <!--End of Step 1: Nav bar-->
         
-        
-        
+ 
         <!--Step 2: Adding Bootstrap grid system to display data-->
         <div class="container">
             <!--<h3>Using Fixed Layout</h3>-->
             <div class="page-header">
-                <h3>Fixed Layout <small>Backbone Grid System</small></h3>
+                <h3>Tables <small>Backbone</small></h3>
             </div>
             
             <!--Row 1: creating two columns: 1 for list and other for entry form-->          
             <div class="row">  
                 <!--1st col: movie list-->
-                <div class="col-xs-6"><h4>Movie Name</h4>
-                    <div class="row" id="movies">
-                        <!-- Backbone view is configured to fill this section up-->
-                    </div>
+                <div class="col-xs-4">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr><th>Name</th></tr>
+                        </thead>
+                        <tbody id="movies">
+                            <!-- Backbone view is configured to fill this section up-->                     
+                        </tbody>
+                    </table>
                 </div>  
                 <!--2nd col for form etc-->
                 <div class="col-xs-6"><h4>Login</h4>
@@ -69,8 +73,6 @@
                         </ul>                        
                     </p>
                 </div>
-               
-                
             </div> <!--end /row-->
             
             <!--<div class="row">
@@ -79,7 +81,6 @@
                     <a href="#" class="next" data-action="next">Next</a>
                 </nav>
             </div>-->
-            
             <!--footer-->
             <div class="row">
                 <div class="col-xs-12">

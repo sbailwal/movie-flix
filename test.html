@@ -3,8 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>About Movie Flix</title>
+        <title>Movie Flix - A place for all your movies</title>
+        
+        <!-- Bootstrap core CSS, finally making it a bootstrap template! -->
         <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css" type="text/css">        
     </head>
     
     <body>
@@ -12,9 +15,11 @@
         <!--SB Note: Move this to some common area-->
         <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
+                
+                <!--For narrow screen width, toggle drop down will show up on top right hand corner-->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only">Toggle navigation</span> 
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -22,22 +27,77 @@
                     <a href="http://localhost:8080" class="pull-left"><img src="/image/movieflix.png" width="67px"></a>
                 </div>
                 
-                <!--SB Note: Move this to some common area-->
+                <!--Navigation items listed here-->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="nav navbar-nav">
                         <li><a href="http://localhost:8080">Home</a></li>
                         <li><a href="/list-movies.html">Movies</a></li>                        
                         <li class="active"><a href="/test.html">Test Area</a></li>                        
-                        <!--<li class="active"><a href="/grid.html">Grid System</a></li>                        -->
+                        <!--<li class="active"><a href="/grid.html">Grid System</a></li>-->                
                         <li><a href="http://www.google.com" target="_blank">Search on Google</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> <!--end /container -->
         </nav>
         <!--End of Step 1: Nav bar-->
+        
+ 
+        <!--Step 2: Adding Bootstrap grid system to display data-->
+        <div class="container">
+            <!--<h3>Using Fixed Layout</h3>-->
+            <div class="page-header">
+                <h3>Tables <small>Backbone</small></h3>
+            </div>
+            
+            <!--Row 1: creating two columns: 1 for list and other for entry form-->          
+            <div class="row">  
+                <!--1st col: movie list-->
+                <div class="col-xs-4">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr><th>Name</th></tr>
+                        </thead>
+                        <tbody id="movies">
+                            <!-- Backbone view is configured to fill this section up-->                     
+                        </tbody>
+                    </table>
+                </div>  
+                <!--2nd col for form etc-->
+                <div class="col-xs-6"><h4>Login</h4>
+                   <h2>Tools Used</h2>
+                    <p>
+                        <ul class="list-group">
+                            <li class="list-group-item"> Movieflix is a <a href="http://backbonejs.org/" target="_blank">Backbone.js application </a></li>
+                            <li class="list-group-item"> It uses <a href="http://bower.io/" target="_blank">Bower</a> for package management</li>
+                            <li class="list-group-item"> It leverages <a href="http://getbootstrap.com/" target="_blank">Bootstrap UI framework</a></li>
+                        </ul>                        
+                    </p>
+                </div>
+            </div> <!--end /row-->
+            
+            <!--<div class="row">
+                <nav id="controls">
+                    <a href="#" class="previous" data-action="previous">Previous</a>
+                    <a href="#" class="next" data-action="next">Next</a>
+                </nav>
+            </div>-->
+            <!--footer-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <footer>
+                        <small>&copy; Copyright 2016 Movie Flix Inc.</small>
+                    </footer>
+                </div>
+            </div>
+        </div>  
+                        
+        <!--Adding require.js for AMD-->
+        <script data-main="../js/config" src="./bower_components/requirejs/require.js"></script>
 
+        <!-- Bootstrap: Add at the end, before body tag ends, for better performance-->
         <script src="../bower_components/jquery/dist/jquery.min.js"></script>
         <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
-
-</html>
+ 
+ </html>
+      

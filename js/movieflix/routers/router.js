@@ -29,7 +29,7 @@ define([
     showMain: function(){
         //console.log("main function from router called! Router working");
         this.moviesListView.render(); //I commented out render call in ListView's constructor. Now our router will call that render
-        $(document.body).append("Router's main function has been called ");
+        //$(document.body).append("Router's main function has been called ");
     },
     
     //options = all input params passed during router's initialization. E.g. as in app.js

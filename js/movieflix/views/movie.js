@@ -7,8 +7,8 @@ define([
 
     //DOM element (<article class="movie">) is being represented with this view
     var View = Backbone.View.extend({
-        tagName: 'article',
-        
+        tagName: 'tr', //change it to tr
+        //tagName: 'article',
         className: 'movie',
         
         /*
@@ -19,8 +19,8 @@ define([
         we discuss build processes.
         */
         //template: "<h3><%=title%></h1>", //adding template
-        template: "<h1><a href='/#movies/<%=id%>'><%=title%></a></h1>", //adding template
-        
+        template: "<a href='/#movies/<%=id%>'><%=title%></a>", //adding template
+        //template: "<td><a href='/#movies/<%=id%>'><%=title%></a></td>", //adding template
         /**
             Note that there is a special syntax used to address the reference of a view to the DOM: this.$el . 
             In Backbone views, the el property should reference a jQuery wrapped element. 

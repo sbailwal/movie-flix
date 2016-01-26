@@ -6,7 +6,7 @@ define([
     "use strict";
    
     var ViewList = Backbone.View.extend({
-        //tagname: 'section',
+        tagname: 'section',
         el: "#movies",
         
         render: function(){

@@ -31,7 +31,7 @@ define([
                 {"id":1, 
                     "title": "Funny Ninja", 
                     "year": "2010", 
-                    "description": "<p>An epic tale of a boy who turns into a funny ninja. Learning his way through the adventurous valley in China, he encountes a brave master who would now change his life...</p>"},
+                    "description": "<p>An epic tale of a boy who turns into a funny ninja. Limping his way through the adventurous valley in China, he encountes a brave master who would now change his life...</p>"},
                 {"id":2, 
                     "title": "Wimpy Kid", 
                     "year":"2008", 
@@ -47,11 +47,11 @@ define([
                 {"id":5, 
                     "title": "Snowman",
                     "year":"1956", 
-                    "description":"<p>Lorem ipsum dolor sit amet, vis et choro fuisset. Magna aperiri conclusionemque per te. Ut ius possit eripuit ancillae, quo ignota possit ea, eam idque labore iisque id. Vide nobis in pro, melius platonem mnesarchum usu te. Nibh nominati sed cu. Id nec periculis laboramus, ex mei alii adipiscing.</p>"},
+                    "description":"<p>Lorem ipsum dolor sit amet, vis et choro fuisset.<p> <p>Magna aperiri conclusionemque per te. Ut ius possit eripuit ancillae, quo ignota possit ea, eam idque labore iisque id.</p> <p> Vide nobis in pro, melius platonem mnesarchum usu te. Nibh nominati sed cu. Id nec periculis laboramus, ex mei alii adipiscing.</p>"},
                 {"id":6, 
                     "title": "The Christmas Story",
                     "year":"1945", 
-                    "description":"<p>Lorem ipsum dolor sit amet, vis et choro fuisset. Magna aperiri conclusionemque per te. Ut ius possit eripuit ancillae, quo ignota possit ea, eam idque labore iisque id. Vide nobis in pro, melius platonem mnesarchum usu te. Nibh nominati sed cu. Id nec periculis laboramus, ex mei alii adipiscing.</p>"}
+                    "description":"<p>Lorem ipsum dolor sit amet, vis et choro fuisset. </p><p>Magna aperiri conclusionemque per te. Ut ius possit eripuit ancillae, quo ignota possit ea, eam idque labore iisque id. Vide nobis in pro, melius platonem mnesarchum usu te.</p>"}
         ] );
     return {run: run};
 });

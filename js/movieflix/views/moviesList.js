@@ -22,7 +22,12 @@ define([
             return this;     
         },
         
-        //initialize: function(){ }
+        initialize: function(){ 
+            //set first movie selected on page load
+            if(this.collection.length > 0){
+                this.collection.get(1).set({selected:true});       
+            }
+        }
     }); 
      return ViewList;
 });

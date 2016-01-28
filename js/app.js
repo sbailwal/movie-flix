@@ -23,7 +23,6 @@ define([
             {"id":5, "title": "Snowman"},
             {"id":6, "title": "The Christmas Story"}] );
 
-        //manual creation must eventually be replaced by extracting mock-data from json file
         //var data = ('../mock-data/movies.json');
 
         //To have router in action, 

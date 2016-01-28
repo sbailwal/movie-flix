@@ -1,3 +1,11 @@
+/*overriding bootstrap list-group-item styling*/
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: maroon;
+    border-color: #2c3e50;
+}
+
 .details{
     width: 240px;
     margin: 10px;

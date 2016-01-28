@@ -36,7 +36,7 @@ define([
             
             //this.$el.html(tmpl(this.model.toJSON())); //when using template
             this.$el.html(tmpl(this.model.attributes));
-            this.$el.toggleClass('selected', this.model.get('selected'));
+            this.$el.toggleClass('active', this.model.get('selected'));
             
             return this; //returning the view object, this way it allows to chain other method calls on render()
         },
@@ -54,11 +54,7 @@ define([
         */
         //We will pass our Model/Movie object while calling this constructor
         initialize: function(){  
-            //making this view a subscriber to changes of a model(i.e. publisher of events)
-            //we are saying here to re-render this view again as soon as attribute 'selected' or 'title' is changed
-            //i.e. when resetSelected method is called on each movie, it will be reloaded
             this.listenTo(this.model, 'change:selected : title', this.render); //data binding
-            //_.bindAll(this, "render"); //context binding
         },
         
         //attaching event handler to this DOM element, i.e. View
@@ -68,11 +64,11 @@ define([
         
         _selectMovie: function(event) {
             event.preventDefault();
-            //console.log($(event.currentTarget).html());
             
             this.model.collection.selectByID(this.model.id);
             //console.log("You clicked on " + this.model.get("title"));
             
+                        
             //commenting out all router.navigate stuff.. not confident on it and see no use of it as of now
             //it needs code changes in initialization for views and router 
             //this.router.navigate("/movies/" + this.model.id);

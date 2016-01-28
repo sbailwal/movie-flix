@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+js/comment-config.js
+js/comment-app.js
+js/movieflix/routers/comment-router.js
+js/movieflix/views/comment-movie.js

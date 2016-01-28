@@ -65,18 +65,6 @@
                 <h3>List Group <small>Backbone component</small></h3>
             </div>
             
-            <!--Just for row header-->
-            <div class="row">
-                <div class="col-xs-3">
-                    <!--<h4>Name</h4>-->
-                </div>
-                <div class="col-xs-5">
-                    <!--<h4>Details</h4>-->
-                </div>
-                <div class="col-xs-4">
-                    <h4>Member Login</h4>
-                </div>
-            </div>
             <!--Row 1: creating 3 columns: 1 for list and other for details and login form-->          
             <div class="row">  
                 
@@ -107,13 +95,15 @@
                             <h1 class="panel-title">Details</h1>
                         </div>
                         <div class="panel-body" id="details">
-                            Details of the selected movie will be listed here.
-                            <br><br> Use panel here, and not jumbotron.
+                            <!--Backbone inserts detailed data here-->
                         </div>
+                        <div class="panel-footer">
+                            <button type="button" class="btn btn-default btn-sm">Add To Wish List</button>
+                        </div>
+                        
                     </div>
                 </div>
-                
-             
+
                 <!--3rd col for login form-->
                 <div class="col-xs-4">
                     <!--<h4>Member Login</h4>-->

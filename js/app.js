@@ -15,22 +15,28 @@ define([
         //prototype
         App.prototype = {
             initialize: function() {
-                console.log("Application started..");
+                console.log("Application initialized..");
         
-                var router = new Router({movies:getStaticData()});
+                //view is renderd via router
+                var router = new Router({movies:this.movies});
                 
-                //renders the view by instantiating router and calling Backbone.history.start
+                //publishing custom events that any view/s can later subscribe to
+                $(document).on("add-to-collection", this.onAdd.bind(this)); //button.js is the only one triggering it as of now                
+                
+                //TODO: Does not work: Monitoring route changes happen by calling start() on the history API
                 $(document).ready(function() {       
-                    Backbone.history.start({root: '/'}); //Monitoring route changes happen by calling start() on the history API
+                    Backbone.history.start({root: '/'}); 
                 }); 
-            }
-        };
-    
-
-        // STATIC DATA
-        var getStaticData = function(){
-       
-            var movies = new Collection([
+            }, //end prototype initialize
+            
+            onAdd: function(e, data) { //e = event, data = passed from the caller, i.e. button.js in our case
+                console.log("custom-event triggered: 'add-to-collection'");
+                $(".form-control").val("");
+                this.movies.add(data);
+            },
+            
+            //STATIC DATA: Used during Router instantiation
+            movies: new Collection([
                 {"id":1, 
                     "title": "Funny Ninja", 
                     "year": "2010", 
@@ -55,9 +61,10 @@ define([
                     "title": "The Christmas Story",
                     "year":"1945", 
                     "description":"<p>Lorem ipsum dolor sit amet, vis et choro fuisset. </p><p>Magna aperiri conclusionemque per te. Ut ius possit eripuit ancillae, quo ignota possit ea, eam idque labore iisque id. Vide nobis in pro, melius platonem mnesarchum usu te.</p>"}
-            ]);  
-            return movies;
-        };
+            ])
+            
+        }; //end prototype
+    
     
     return App;
 });

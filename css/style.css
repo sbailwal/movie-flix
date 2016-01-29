@@ -3,6 +3,7 @@
     z-index: 2;
     background-color: #990000;
     border-color: #2c3e50;
+    font-weight: bold;
 }
 
 .details{
@@ -11,12 +12,6 @@
     background-color: mediumblue;
     color: black;
     float: left;
-}
-
-.selected{
-    /*border:1px maroon solid;*/
-    background-color: maroon;
-    font-weight: bold;
 }
 
 body {

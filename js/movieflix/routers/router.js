@@ -1,8 +1,9 @@
 define([
     "jquery",
     "backbone",
-    "movieflix/views/moviesList"
-], function($, Backbone, MoviesListView) {
+    "movieflix/views/moviesList",
+    "movieflix/views/button"
+], function($, Backbone, MoviesListView, ButtonView) {
         "use strict";
         
         var Router = Backbone.Router.extend({
@@ -13,7 +14,6 @@ define([
         
         
         showMain: function(){
-            console.log("main function from router called! Router working");
             this.moviesListView.render(); 
         },
         
@@ -22,11 +22,14 @@ define([
         // },
          
         initialize: function(options) {
-            this.movies = options.movies; 
             this.moviesListView = new MoviesListView({
                 collection: options.movies, 
             });
-        }
+            
+            //instantiate button.js view for text and button and register to click events
+            this.buttonView = new ButtonView({el: $('#movieFlixButtons'), collection:options.movies});
+        },
+        
     });
     return Router;    
 });

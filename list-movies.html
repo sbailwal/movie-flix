@@ -74,11 +74,12 @@
                     <!--<h4>Name</h4>-->
                     <ul class="list-group" id="movies">
                         <!--Adding input box for adding a new movie-->
-                        <form>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Add New Movie&hellip;">
+                        <form class="form-inline">
+                            <div class="input-group" id="movieFlixButtons">
+                                <input type="text" class="form-control add-movie" placeholder="Add New Movie&hellip;">
                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default">Add</button>
+                                    <input type="submit" value="Add" class="btn btn-default add-todo" />
+                                    <!--<button type="button" class="btn btn-default add-movie">Add</button>-->
                                 </span>
                             </div>
                         </form>

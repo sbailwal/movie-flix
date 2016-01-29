@@ -4,30 +4,33 @@ define([
     "collection",
     "movieflix/routers/router"
 ], function (Backbone, Collection, Router) {
-    
-        //run function is called by config.js to run the application!
-        var run = function() {   
-            bootMyRouter();
-            console.log("Application started..");
+        
+        "use strict";
+        
+        //initialize
+        var App = function() {
+            this.initialize();
+        };
+        
+        //prototype
+        App.prototype = {
+            initialize: function() {
+                console.log("Application started..");
+        
+                var router = new Router({movies:getStaticData()});
+                
+                //renders the view by instantiating router and calling Backbone.history.start
+                $(document).ready(function() {       
+                    Backbone.history.start({root: '/'}); //Monitoring route changes happen by calling start() on the history API
+                }); 
+            }
         };
     
-        //renders the view by instantiating router and calling Backbone.history.start
-        var bootMyRouter = function(){     
-            $(document).ready(function() {
-                var router = new Router({movies:movies}); 
-                
-                //Monitoring route changes happen by calling start() on the history API
-                //This is not working.. but does not impact basic functionality of my app
-                Backbone.history.start({         
-                    root: '/'
-                });
-            });
-        }; 
-    
-        ///////////////////////////////
+
         // STATIC DATA
-        //////////////////////////////
-        var movies = new Collection([
+        var getStaticData = function(){
+       
+            var movies = new Collection([
                 {"id":1, 
                     "title": "Funny Ninja", 
                     "year": "2010", 
@@ -52,7 +55,10 @@ define([
                     "title": "The Christmas Story",
                     "year":"1945", 
                     "description":"<p>Lorem ipsum dolor sit amet, vis et choro fuisset. </p><p>Magna aperiri conclusionemque per te. Ut ius possit eripuit ancillae, quo ignota possit ea, eam idque labore iisque id. Vide nobis in pro, melius platonem mnesarchum usu te.</p>"}
-        ] );
-    return {run: run};
+            ]);  
+            return movies;
+        };
+    
+    return App;
 });
 

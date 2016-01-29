@@ -12,7 +12,8 @@ require.config({
 require([
     "jquery",
     "app"
-    ], function($, app){
+    ], function($, App){
+        
         "use strict";
-        app.run();
+        new App();
 });

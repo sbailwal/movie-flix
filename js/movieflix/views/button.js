@@ -13,15 +13,16 @@ define([
             "blur .add-movie": 'addMovie'
         },
         
+        //triggering custom event that was published by router
         addMovie: function(e) {
             e.preventDefault();
-            console.log("UI blur event triggered. Data: " + e.target.value);
-            
-            //triggering custom event that was published by App's initialize
-            $(document).trigger("add-to-collection", e.target.value);
+
+            if(e.target.value.trim()!="") { //if(e.target.value)
+                console.log("UI blur: Triggering custom event 'add-to-collection' with Data= " + e.target.value);
+                $(document).trigger("add-to-collection", e.target.value);
+            }
         },      
     }); 
     
     return View;
 });
-

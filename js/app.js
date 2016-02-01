@@ -1,9 +1,12 @@
-//After adding require.js support, using define to declare dependency
+/**
+ * Purpose is to instantiate "Router" and pass an array(static data) to it.
+ */
+
 define([
 	"backbone",
-    "collection",
-    "movieflix/routers/router"
-], function (Backbone, Collection, Router) {
+    "movieflix/routers/router",
+    
+], function (Backbone, Router) {
         
         "use strict";
         
@@ -19,24 +22,15 @@ define([
         
                 //view is renderd via router
                 var router = new Router({movies:this.movies});
-                
-                //publishing custom events that any view/s can later subscribe to
-                $(document).on("add-to-collection", this.onAdd.bind(this)); //button.js is the only one triggering it as of now                
-                
+                                
                 //TODO: Does not work: Monitoring route changes happen by calling start() on the history API
-                $(document).ready(function() {       
-                    Backbone.history.start({root: '/'}); 
-                }); 
+                // $(document).ready(function() {       
+                    // Backbone.history.start({root: '/'}); 
+                // }); 
             }, //end prototype initialize
-            
-            onAdd: function(e, data) { //e = event, data = passed from the caller, i.e. button.js in our case
-                console.log("custom-event triggered: 'add-to-collection'");
-                $(".form-control").val("");
-                this.movies.add(data);
-            },
-            
+                        
             //STATIC DATA: Used during Router instantiation
-            movies: new Collection([
+            movies: [
                 {"id":1, 
                     "title": "Funny Ninja", 
                     "year": "2010", 
@@ -61,7 +55,7 @@ define([
                     "title": "The Christmas Story",
                     "year":"1945", 
                     "description":"<p>Lorem ipsum dolor sit amet, vis et choro fuisset. </p><p>Magna aperiri conclusionemque per te. Ut ius possit eripuit ancillae, quo ignota possit ea, eam idque labore iisque id. Vide nobis in pro, melius platonem mnesarchum usu te.</p>"}
-            ])
+            ]
             
         }; //end prototype
     

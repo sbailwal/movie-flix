@@ -11,10 +11,10 @@ define([
         
         initialize: function(){
             //listening to when an item is added to this collection
-            this.on('add', function(data) {
+            this.on('add', function(data) { //this.on('update', function(data)
                 console.log("Collection is silently listening: New item added");
-            })
-        },     
+            });
+         },     
         
         //unselect all models
         resetSelected: function() {

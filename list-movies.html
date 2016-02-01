@@ -34,8 +34,6 @@
                     <ul class="nav navbar-nav">
                         <li><a href="http://localhost:8080">Home</a></li>
                         <li class="active"><a href="/list-movies.html">Movies</a></li>                        
-                        <li><a href="/table-movies.html">Table</a></li>                
-                        <li><a href="/test.html">Test Area</a></li>                                                
                         <li><a href="http://www.google.com" target="_blank">Search on Google</a></li>
                     </ul>
                     <!--Adding search button to nav-bar-->
@@ -44,7 +42,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Search" name="search-term" id="search-term">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
+                                    <button class="btn btn-default" type="submit" onclick="notImplementedAlert()">
                                         <span class="glyphicon glyphicon-search"></span>
                                     </button>
                                 </div>
@@ -78,8 +76,8 @@
                             <div class="input-group" id="movieFlixButtons">
                                 <input type="text" class="form-control add-movie" placeholder="Add New Movie&hellip;">
                                 <span class="input-group-btn">
-                                    <input type="submit" value="Add" class="btn btn-default add-todo" />
-                                    <!--<button type="button" class="btn btn-default add-movie">Add</button>-->
+                                    <!--<input type="submit" value="Add" class="btn btn-default" />-->
+                                    <!--<button type="button" class="btn btn-default">Add</button>-->
                                 </span>
                             </div>
                         </form>
@@ -99,7 +97,7 @@
                             <!--Backbone inserts detailed data here-->
                         </div>
                         <div class="panel-footer">
-                            <button type="button" class="btn btn-default btn-sm">Add To Wish List</button>
+                            <button type="button" class="btn btn-default btn-sm" onclick="notImplementedAlert()">Add To Wish List</button>
                         </div>
                         
                     </div>
@@ -120,7 +118,7 @@
                         <div class="checkbox">
                             <label><input type="checkbox"> Remember me</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary" onclick="notImplementedAlert()">Login</button>
                     </form>
                 </div>
             </div> <!--end /row-->
@@ -141,7 +139,13 @@
                 </div>
             </div>
         </div>  
-                        
+
+        <script>
+            function notImplementedAlert(){ 
+                alert("TBD. Not yet impelmented.");
+            }
+        </script>
+                                
         <!--Adding require.js for AMD-->
         <script data-main="../js/config" src="./bower_components/requirejs/require.js"></script>
 

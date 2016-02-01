@@ -11,8 +11,8 @@ define([
     "backbone",
     "collection",
     "movieflix/views/moviesList",
-    "movieflix/views/button"
-], function($, Backbone, Collection, MoviesListView, ButtonView) {
+    "movieflix/views/html-element"
+], function($, Backbone, Collection, MoviesListView, ElementView) {
         "use strict";
         
         var Router = Backbone.Router.extend({
@@ -24,10 +24,6 @@ define([
         showMain: function(){
             this.moviesListView.render(); 
         },
-        
-        // selectMovies: function(id) {
-        //     this.movies.selectByID(id);
-        // },
          
         initialize: function(options) {
             //1. instantiate collection and listView
@@ -37,26 +33,25 @@ define([
             });
             
             //2. instantiate button view and attach it to DOM element #movieFilixButton
-            this.buttonView = new ButtonView({el: $('#movieFlixButtons'), collection:options.movies});
+            this.elementView = new ElementView({el: $('#movieFlixButtons'), collection:options.movies});
             
-            this._publishCustomListeners();
+            //3. publish any custom event that can be triggerd/subscribed by views later
+            this._publishCustomEvent();  
+        },
+        
+        _publishCustomEvent: function() {
+            //TODO: find .bind vs .on? w.r.t $(document).on
+            $(document).on("add-to-collection", this._onAddToCollection.bind(this));                 
             
         },
         
-        //publishing custom events that any view/s can later subscribe to
-        _publishCustomListeners: function() {
-            //button.js is the only one triggering it as of now
-            $(document).on("add-to-collection", this.onAddToCollection.bind(this));                 
-            
-        },
-        
-        onAddToCollection: function(e, data) { //e = event, data = passed from the caller, i.e. button.js in our case
-            console.log("custom-event triggered: 'add-to-collection'");
+        //this adds passed item/data to the collection
+        _onAddToCollection: function(e, data) { //e = event, data = passed from the caller, i.e. html-element.js in our case
+            console.log("Router: custom-event triggered: 'add-to-collection': Added item to collection");
             $(".form-control").val("");
-            this.moviesCollection.add(data);
-        },
+            this.moviesCollection.add({"id":(this.moviesCollection.length + 1), "title":data});
+        }
 
-        
     });
     return Router;    
 });

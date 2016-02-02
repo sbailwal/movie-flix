@@ -1,7 +1,7 @@
 define([
     "underscore", 
     "backbone",
-    "backbone-movieflix/views/detail"
+    "marionette-movieflix/views/detail"
 ], function(_, Backbone, MovieDetail) {
    
    "use strict";

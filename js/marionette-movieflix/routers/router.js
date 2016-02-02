@@ -10,8 +10,8 @@ define([
     "jquery",
     "backbone",
     "collection",
-    "backbone-movieflix/views/moviesList",
-    "backbone-movieflix/views/html-element"
+    "marionette-movieflix/views/moviesList",
+    "marionette-movieflix/views/html-element"
 ], function($, Backbone, Collection, MoviesListView, ElementView) {
         "use strict";
         

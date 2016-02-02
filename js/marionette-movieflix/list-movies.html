@@ -8,8 +8,8 @@
         <!-- Bootstrap core CSS, finally making it a bootstrap template! -->
         <!--<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
         <!--<link href="../bower_components/bootstrap/dist/css/journal-bootswatch.min.css" rel="stylesheet">-->
-        <link href="../bower_components/bootstrap/dist/css/flatly-bootswatch.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css" type="text/css">        
+        <link href="/../bower_components/bootstrap/dist/css/flatly-bootswatch.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/../css/style.css" type="text/css">        
     </head>
     
     <body>
@@ -33,7 +33,8 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="nav navbar-nav">
                         <li><a href="http://localhost:8080">Home</a></li>
-                        <li class="active"><a href="/list-movies.html">Movies</a></li>                        
+                        <li><a href="/js/backbone-movieflix/list-movies.html">Backbone - Movies</a></li>  
+                        <li class="active"><a href="/js/marionette-movieflix/list-movies.html">Marionette - Movies</a></li>                                              
                         <li><a href="http://www.google.com" target="_blank">Search on Google</a></li>
                     </ul>
                     <!--Adding search button to nav-bar-->
@@ -146,12 +147,12 @@
             }
         </script>
                                 
-        <!--Adding require.js for AMD-->
-        <script data-main="../js/config" src="./bower_components/requirejs/require.js"></script>
+        <!--Adding require.js for AMD: root set in data-main=/movie-flix-->
+        <script data-main="/../js/config" src="/../bower_components/requirejs/require.js"></script>
 
         <!-- Bootstrap: Add at the end, before body tag ends, for better performance-->
-        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
  
  </html>

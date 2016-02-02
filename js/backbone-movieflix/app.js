@@ -4,7 +4,7 @@
 
 define([
 	"backbone",
-    "movieflix/routers/router",
+    "backbone-movieflix/routers/router",
     
 ], function (Backbone, Router) {
         

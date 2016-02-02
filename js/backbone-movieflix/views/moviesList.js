@@ -1,6 +1,6 @@
 define([
     "backbone", 
-    "movieflix/views/movie"
+    "backbone-movieflix/views/movie"
 ], function(Backbone, MovieView) {
     
     "use strict";

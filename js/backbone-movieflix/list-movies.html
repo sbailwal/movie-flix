@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Movie Flix - A place for all your movies</title>
+        
+        <!-- Bootstrap core CSS, finally making it a bootstrap template! -->
+        <!--<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+        <!--<link href="../bower_components/bootstrap/dist/css/journal-bootswatch.min.css" rel="stylesheet">-->
+        <link href="/../bower_components/bootstrap/dist/css/flatly-bootswatch.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/../css/style.css" type="text/css">        
+    </head>
+    
+    <body>
+        <!--Step 1: Adding navigation bar-->
+        <!--SB Note: Move this to some common area-->
+        <nav id="myNavbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                
+                <!--For narrow screen width, toggle drop down will show up on top right hand corner-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="sr-only">Toggle navigation</span> 
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="http://localhost:8080" class="pull-left"><img src="/image/movieflix.png" class="img-circle" width="80px"></a>
+                </div>
+                
+                <!--Navigation items listed here-->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="http://localhost:8080">Home</a></li>
+                        <li class="active"><a href="/js/backbone-movieflix/list-movies.html">Backbone - Movies</a></li>  
+                        <li><a href="/js/marionette-movieflix/list-movies.html">Marionette - Movies</a></li>                                              
+                        <li><a href="http://www.google.com" target="_blank">Search on Google</a></li>
+                    </ul>
+                    <!--Adding search button to nav-bar-->
+                    <div class="col-sm-3 col-md-3 pull-right">
+                        <form class="navbar-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="search-term" id="search-term">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" onclick="notImplementedAlert()">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>
+                            </div>      
+                        </form>
+                    </div>                    
+                    
+                </div>
+            </div> <!--end /container -->
+        </nav>
+        <!--End of Step 1: Nav bar-->
+        
+        
+        
+        <!--Step 2: Adding Bootstrap grid system to display data-->
+        <div class="container">
+            <div class="page-header">
+                <h3>List Group <small>Backbone component</small></h3>
+            </div>
+            
+            <!--Row 1: creating 3 columns: 1 for list and other for details and login form-->          
+            <div class="row">  
+                
+                
+                <!--1st col: movie list-->
+                <div class="col-xs-3">
+                    <!--<h4>Name</h4>-->
+                    <ul class="list-group" id="movies">
+                        <!--Adding input box for adding a new movie-->
+                        <form class="form-inline">
+                            <div class="input-group" id="movieFlixButtons">
+                                <input type="text" class="form-control add-movie" placeholder="Add New Movie&hellip;">
+                                <span class="input-group-btn">
+                                    <!--<input type="submit" value="Add" class="btn btn-default" />-->
+                                    <!--<button type="button" class="btn btn-default">Add</button>-->
+                                </span>
+                            </div>
+                        </form>
+                       <!-- Now Backbone configured to list movies here-->
+                    </ul>            
+                </div>  
+
+                
+                
+                <!--2nd col for 'Movie Details' using Panel component-->
+                <div class="col-xs-5">
+                    <div class ="panel panel-success">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Details</h1>
+                        </div>
+                        <div class="panel-body" id="details">
+                            <!--Backbone inserts detailed data here-->
+                        </div>
+                        <div class="panel-footer">
+                            <button type="button" class="btn btn-default btn-sm" onclick="notImplementedAlert()">Add To Wish List</button>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!--3rd col for login form-->
+                <div class="col-xs-4">
+                    <!--<h4>Member Login</h4>-->
+                    <form class ="jumbotron">
+                        <div class="form-group">
+                           <label for="inputEmail">Email</label>
+                           <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="notImplementedAlert()">Login</button>
+                    </form>
+                </div>
+            </div> <!--end /row-->
+            
+            <!--<div class="row">
+                <nav id="controls">
+                    <a href="#" class="previous" data-action="previous">Previous</a>
+                    <a href="#" class="next" data-action="next">Next</a>
+                </nav>
+            </div>-->
+            
+            <!--footer-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <footer>
+                        <small>&copy; Copyright 2016 Movie Flix Inc.</small>
+                    </footer>
+                </div>
+            </div>
+        </div>  
+
+        <script>
+            function notImplementedAlert(){ 
+                alert("TBD. Not yet impelmented.");
+            }
+        </script>
+                                
+        <!--Adding require.js for AMD: root set in data-main=/movie-flix-->
+        <script data-main="/../js/config" src="/../bower_components/requirejs/require.js"></script>
+
+        <!-- Bootstrap: Add at the end, before body tag ends, for better performance-->
+        <script src="/../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    </body>
+ 
+ </html>
+      

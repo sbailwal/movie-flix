@@ -33,7 +33,7 @@ define([
             });
             
             //2. instantiate button view and attach it to DOM element #movieFilixButton
-            this.elementView = new ElementView({el: $('#movieFlixButtons'), collection:options.movies});
+            this.elementView = new ElementView({el: $('#movieFlixButtons')});
             
             //3. publish any custom event that can be triggerd/subscribed by views later
             this._publishCustomEvent();  

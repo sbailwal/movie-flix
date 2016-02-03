@@ -3,17 +3,21 @@ require.config({
         jquery: "../bower_components/jquery/dist/jquery",
         underscore: "../bower_components/underscore/underscore",
         backbone: "../bower_components/backbone/backbone",
+        marionette:"../bower_components/backbone.marionette/lib/backbone.marionette.min",
         model: "marionette-movieflix/models/movie",
-        collection:"marionette-movieflix/collections/movies"
+        collection:"marionette-movieflix/collections/movies",
+        app: "marionette-movieflix/app"
     }
 });
 
 //dependencies be loaded on app startup
 require([
     "jquery",
-    "marionette-movieflix/app"
-    ], function($, App){
+    'marionette',
+    "app"
+    ], function($, Marionette, App){
         
         "use strict";
-        new App();
+        console.log("config loaded");
+        App.start();
 });

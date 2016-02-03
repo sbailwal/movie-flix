@@ -1,7 +1,6 @@
 define([
-    "underscore", 
     "backbone"
-], function(_, Backbone) {
+], function(Backbone) {
    
    "use strict";
 
@@ -19,4 +18,3 @@ define([
     
     return View;
 });
-

@@ -7,12 +7,11 @@
  */
 
 define([
-    "jquery",
     "backbone",
-    "collection",
+    "marionette-movieflix/collections/movies",
     "marionette-movieflix/views/moviesList",
     "marionette-movieflix/views/html-element"
-], function($, Backbone, Collection, MoviesListView, ElementView) {
+], function(Backbone, Collection, MoviesListView, ElementView) {
         "use strict";
         
         var Router = Backbone.Router.extend({
@@ -26,20 +25,21 @@ define([
         },
          
         initialize: function(options) {
-            //1. instantiate collection and listView
+             //1. Attach listeners 
+            this._attachListeners();  
+
+           //2. instantiate collection and listView
             this.moviesCollection = new Collection(options.movies);
             this.moviesListView = new MoviesListView({
                 collection: this.moviesCollection, 
             });
             
-            //2. instantiate button view and attach it to DOM element #movieFilixButton
+            //3. instantiate button view and attach it to DOM element #movieFilixButton
             this.elementView = new ElementView({el: $('#movieFlixButtons')});
             
-            //3. publish any custom event that can be triggerd/subscribed by views later
-            this._publishCustomEvent();  
         },
         
-        _publishCustomEvent: function() {
+        _attachListeners: function() {
             //TODO: find .bind vs .on? w.r.t $(document).on
             $(document).on("add-to-collection", this._onAddToCollection.bind(this));                 
             

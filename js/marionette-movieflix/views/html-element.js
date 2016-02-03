@@ -1,12 +1,11 @@
 define([
-    "underscore", 
-    "backbone",
-    "collection"
-], function(_, Backbone, collection) {
+    "marionette",
+    "marionette-movieflix/collections/movies"
+], function(Marionette, collection) {
    
    "use strict";
 
-    var View = Backbone.View.extend({
+    var View = Marionette.ItemView.extend({
 
         events: {
             //events: blur, change, focus, input

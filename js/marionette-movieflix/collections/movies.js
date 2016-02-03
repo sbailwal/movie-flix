@@ -2,7 +2,7 @@
 //-------------
 define([
     "backbone",
-    "model"
+    "marionette-movieflix/models/movie"
 ], function(Backbone, Model) {
     "use strict";
 

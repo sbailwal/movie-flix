@@ -1,39 +1,39 @@
-/**
- * Purpose is to instantiate "Router" and pass an array(static data) to it.
- */
+//this is the layout for "movie" region under the root
 
 define([
-    "backbone",
-	"marionette",
-    "marionette-movieflix/routers/router",  
-    "marionette-movieflix/views/layout"
-], function (Backbone, Marionette, Router, RootLayoutView) {        
-        "use strict";
-                
-        //creating a marionette application 
-        var App = new Marionette.Application({
-            // initialize: function(){
-            //     console.log("App Initialization");
-                
-            //     //not the best way.. but instantiating LayoutView and adding it as rootview
-            //     this.rootView = new RootLayoutView();
-            //     this.rootView.render();                
-            // }
-        });
+    "marionette",
+    "marionette-movieflix/collections/movies",
+    "marionette-movieflix/views/moviesList",
+], function(Marionette, Collection, MoviesListView) {
+    
+    "use strict";
+    
+    var MovieLayout = Marionette.LayoutView.extend({
+        regions: {
+            movieList: "#list-view"
+            //movieDetail: "#detail-view",
+            //addNew: "#add-view"    
+        },
         
-        //application events: before:start, start
-        App.on("start", function(options){      
-            //console.log("App started");  
-            //this.router = new Router({movies:movies, rootView:this.rootView});            
-                        
-            new Router({movies:movies});    
+        initialize: function(){  
+            console.log('MovieLayoutView: initialized >>> ');   
             
-            if(Backbone.history){ 
-                Backbone.history.start(); 
-            }          
-        });
+        },
         
-        var movies = [
+        onRender: function() {
+            console.log('Movie LayoutView: onRender');
+            this.movieList.show(new MoviesListView({collection: new Collection(movies)}));
+        },
+        
+        onBeforeShow: function () {
+            console.log("MovieLayoutView: Before Show called");
+			this.showChildView("movieList", this.moviesListView);
+			//this.showChildView("user", new UserView(this.options));
+		},
+        
+    });
+    
+    var movies = [
             {"id":1, 
                 "title": "Funny Ninja", 
                 "year": "2010", 
@@ -59,6 +59,6 @@ define([
                 "year":"1945", 
                 "description":"<p>Lorem ipsum dolor sit amet, vis et choro fuisset. </p><p>Magna aperiri conclusionemque per te. Ut ius possit eripuit ancillae, quo ignota possit ea, eam idque labore iisque id. Vide nobis in pro, melius platonem mnesarchum usu te.</p>"}
         ];
-        
-        return App;
+    
+    return MovieLayout;
 });

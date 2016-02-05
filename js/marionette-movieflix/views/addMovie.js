@@ -1,15 +1,16 @@
 define([
     "marionette",
-    "marionette-movieflix/collections/movies"
-], function(Marionette, collection) {
+    "syphon"
+], function(Marionette, Syphon) {
    
    "use strict";
 
     var View = Marionette.ItemView.extend({
-
+        //el: "form.add-movie",
         events: {
             //events: blur, change, focus, input
-            "blur .add-movie": 'addMovie'
+            "blur .add-movie": 'addMovie',
+            "submit": "addMovie" //(Backbone.Syphon.serialize(this))
         },
         
         //triggering custom event that was published by router

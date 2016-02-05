@@ -6,7 +6,7 @@ define([
 
     var View = Backbone.View.extend({
         el: '#details',
-        template: "Name: <%=title%> <br>Year: <%=year%><p><%=description%></p>", 
+        template: "Name: <%=title%>" + "/n" + "Year: <%=year%><p><%=description%></p>", 
 
         //convert to DOM element
         render: function() {

@@ -10,8 +10,9 @@ define([
     "marionette",
     "marionette-movieflix/collections/movies",
     "marionette-movieflix/views/moviesList",
-    "marionette-movieflix/views/addMovie"
-], function(Marionette, Collection, MoviesListView, AddFormView) {
+    "marionette-movieflix/views/addMovie",
+    "marionette-movieflix/views/detail"
+], function(Marionette, Collection, MoviesListView, AddFormView, DetailView) {
         "use strict";
         
         var Router = Marionette.AppRouter.extend({
@@ -56,17 +57,37 @@ define([
             console.log("router initialized");
         },
         
+        //TODO: instead of attaching it to document, start using Radio
         _attachListeners: function() {
             //TODO: find .bind vs .on? w.r.t $(document).on
-            $(document).on("add-to-collection", this._onAddToCollection.bind(this));                 
+            $(document).on("add-movie", this._onAddMovie.bind(this));          
+            $(document).on("display-detail", this._displayDetailView.bind(this));       
             
         },
         
         //this adds passed item/data to the collection
-        _onAddToCollection: function(e, data) { //e = event, data = passed from the caller, i.e. html-element.js in our case
-            console.log("Router: custom-event triggered: 'add-to-collection': Added item to collection");
+        _onAddMovie: function(e, data) { //e = event, data = passed from the caller, i.e. html-element.js in our case
             $(".form-control").val("");
-            this.moviesCollection.add({"id":(this.moviesCollection.length + 1), "title":data});
+            
+            var id = this.moviesCollection.length + 1;
+            this.moviesCollection.add({"id":id, "title":data});
+            this.moviesCollection.selectByID(id); //set newly added movie as selected on UI
+        },
+        
+        _displayDetailView: function(e, data) {
+            console.log("Displaying detail view");
+            
+            //var model = this.moviesCollection.get(modelId);
+            
+            //intializing child view if selected
+           // if(data.get("selected")) {
+                var detailView = new DetailView({
+                    model:data
+                });       
+                         
+                detailView.render(); //render child view      
+                //$('body').append(detailView.render().el);         
+            //}  
         }
 
     });

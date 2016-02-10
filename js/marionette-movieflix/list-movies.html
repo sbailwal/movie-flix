@@ -66,45 +66,46 @@
             
             <!--Row 1: Body containing 3 columns-->          
             <div class="row">  
-
-                <!--1st col: movie list-->
-                <div class="col-xs-3">
-                    <ul class="list-group" id="movies">
-                        <!-- Marionette configured to list movies here-->
-                    </ul>
-                </div>  
-
-                              
-                <!--2nd col for 'Movie Details' using Panel component-->
-                <div class="col-xs-5">
-                    <div class ="panel panel-success">
-                        <div class="panel-heading">
-                            <h1 class="panel-title">Details</h1>
+                <div class ="col-xs-10"> <!-- panel panel-success-->
+                    
+                    <!--1st col: movie list-->
+                    <div class="col-xs-3">
+                        <ul class="list-group" id="movies">
+                            <!-- Marionette configured to list movies here-->
+                        </ul>
+                    </div>  
+                    <!--End 1st col: movie list-->
+                                
+                    <!--2nd col for 'Movie Details' using Panel component-->
+                    <div class="col-xs-5">
+                        <div class ="panel panel-success">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">Details</h1>
+                            </div>
+                            <div class="panel-body" id="details">
+                                <!--Marionette inserts detailed data here-->
+                            </div>
+                            <div class="panel-footer">
+                                <button type="button" class="btn btn-sm action-button" onclick="notImplementedAlert()">Add To Wish List</button>
+                            </div>     
                         </div>
-                        <div class="panel-body" id="details">
-                            <!--Marionette inserts detailed data here-->
-                        </div>
-                        <div class="panel-footer">
-                            <button type="button" class="btn btn-sm action-button" onclick="notImplementedAlert()">Add To Wish List</button>
-                        </div>     
                     </div>
-                </div>
 
-                <!--3rd col: "Add new movie"" form-->
-                <div class="col-xs-4">
-                    <div class ="panel panel-success">
-                        <div class="panel-heading">
-                            <h1 class="panel-title">Can't find your movie? Add it below..</h1>
-                        </div>
-                       <div class="panel-body">
+                    <!--3rd col: "Add new movie"" form-->
+                    <div class="col-xs-4">
+                        <div class ="panel panel-success">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">Can't find your movie? Add it below..</h1>
+                            </div>
+                        <div class="panel-body">
                             <form class ="well well-sm add-movie-form" role="form">
                                 <div class="form-group">
-                                <label for="title">Name</label>
-                                <input type="text" class="form-control" name="title" placeholder="Name of the movie" required>
+                                    <label for="title">Name</label>
+                                    <input type="text" class="form-control" name="title" placeholder="Name of the movie" required>
                                 </div>
                                 <div class="form-group">
-                                <label for="description">Synopsis</label>
-                                <textarea class="form-control" name="description" rows="3"></textarea>
+                                    <label for="description">Synopsis</label>
+                                    <textarea class="form-control" name="description" rows="3"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="year">Released Year</label>
@@ -123,11 +124,40 @@
                                     <input type="submit" class="btn action-button add" value="Add It Now">
                                 </span>
                             </form>
-                       </div> <!--end panel body -->
+                        </div> <!--end panel body -->
+                        </div>
                     </div>
+                    
+                    
                 </div>
-                
+                <!-- column 4 for user stuff -->  
+                <div class="col-xs-2">
+                    <div class ="panel panel-warning">
+                        <div class="panel-heading">
+                                <h1 class="panel-title">Registered Users</h1>
+                            </div>
+                        <div class="panel-body">
+                            <ul class="list-group" id="wishlist">
+                                <li class="list-group-item">ABC</li>
+                                <li class="list-group-item">ABC</li>
+                                <li class="list-group-item">ABC</li>
+                                <li class="list-group-item">ABC</li>
+                                <li class="list-group-item">ABC</li>
+                                <li class="list-group-item">ABC</li>
+                                <li class="list-group-item">ABC</li>
+                                <li class="list-group-item">ABC</li>
+                                <li class="list-group-item">ABC</li>
+                                <li class="list-group-item">ABC</li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div>  
+              
+             
             </div> <!--end Row 1>
+            
+            
+            
             
             <!--Row 2: footer-->
             <div class="row">

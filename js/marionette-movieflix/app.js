@@ -17,7 +17,7 @@ define([
         var App = Marionette.Application.extend({
             channel: Radio.channel("global"),
             regions: {
-                movieRegion: "ul.list-group"  //"movieListView: "#movies""
+                movieRegion: "#movies"  //"movieListView: "#movies" or ul.list-group"
                 }, 
         
             initialize: function(){

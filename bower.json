@@ -25,6 +25,7 @@
     "requirejs": "~2.1.22",
     "bootstrap": "~3.3.6",
     "backbone.marionette": "~2.4.4",
-    "backbone.syphon": "~0.6.3"
+    "backbone.syphon": "~0.6.3",
+    "backbone.radio": "~1.0.2"
   }
 }

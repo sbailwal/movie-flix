@@ -1,15 +1,19 @@
 define([
-    "marionette"
-], function(Marionette) {
+    "marionette",
+    "backbone.radio"
+], function(Marionette, Radio) {
    
    "use strict";
 
     var View = Marionette.ItemView.extend({
+        channel: Radio.channel("global"),
         tagName: 'li', 
-        template: _.template("<a href='/list-movies.html/movies/<%=id%>'><%=title%></a>"), 
         className: 'list-group-item', //this is a bootstrap css class
+        template: _.template("<a href='/list-movies.html/movies/<%=id%>'><%=title%></a>"), 
+        events: {
+           'click': '_selectMovie'
+        },
         
-        //initialization
         initialize: function(){  
             //console.log('Movie ItemView: initialized >>> ' + this.model.get('title'));
             
@@ -24,11 +28,7 @@ define([
         onShow: function(){ 
             //console.log('Movie ItemView: onShow >>> ' + this.model.get('title')) 
         },
-        
-        events: {
-           'click': '_selectMovie'
-        },
-        
+                
         _selectMovie: function(event) {
             event.preventDefault();
             this.model.collection.selectByID(this.model.id);
@@ -37,13 +37,11 @@ define([
         _setSelected: function() {
             this.$el.toggleClass('active', this.model.get('selected'));
             
-            //triggering to display detail view
             if(this.model.get("selected")) {
-                $(document).trigger("display-detail", this.model);
+                this.channel.trigger("display-detail", this.model);
+                //$(document).trigger("display-detail", this.model);
             }    
         }
-
-    }); 
-    
+    });   
     return View;
 });

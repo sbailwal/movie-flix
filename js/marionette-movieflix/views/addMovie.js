@@ -1,26 +1,22 @@
 define([
     "marionette",
+    "backbone.radio",
     "syphon"
-], function(Marionette, Syphon) {
+], function(Marionette, Radio, Syphon) {
    
    "use strict";
 
     var View = Marionette.ItemView.extend({
-        //el: "form.add-movie",
+        channel: Radio.channel("global"),
+        el: "form.add-movie-form",
         events: {
-            //events: blur, change, focus, input
-            "blur .add-movie": 'addMovie',
-            //"submit": "addMovie" //(Backbone.Syphon.serialize(this))
+            "submit": "onSubmit"
         },
         
-        //triggering custom event that was published by router
-        addMovie: function(e) {
+        onSubmit: function(e) {
+            console.log("YEAH.. on submit called");
             e.preventDefault();
-
-            if(e.target.value.trim()!="") { //if(e.target.value)
-                console.log("UI blur: Triggering custom event 'add-to-collection' with Data= " + e.target.value);
-                $(document).trigger("add-movie", e.target.value);
-            }
+            this.channel.trigger("add-movie", Backbone.Syphon.serialize(this));
         },      
     }); 
     

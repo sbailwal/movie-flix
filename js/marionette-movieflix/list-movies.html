@@ -61,7 +61,7 @@
         <!--Step 2: Adding Bootstrap grid system to display data-->
         <div class="container">
             <div class="page-header">
-                <h3>Marionette Power <small>TBD</small></h3>
+                <h3>Marionette Power <small>Grid System using List</small></h3>
             </div>
             
             <!--Row 1: creating 3 columns: 1 for list and other for details and login form-->          
@@ -81,24 +81,23 @@
                     <div>
                         <ul class="list-group" id="movies">
                             <!--Adding input box for adding a new movie-->
-                            <form class="form-inline add-movie" >
-                                <div class="input-group" id="addForm">
-                                    <input type="text" class="form-control add-movie" placeholder="Add New Movie&hellip;">
+                            <!--<form class="form-inline add-movie-form" >-->
+                                <!--<div class="input-group" id="addForm">-->
+                                    <!--<input type="text" class="form-control add-movie" placeholder="Add New Movie">-->
                                     <!--<span class="input-group-btn">-->
-                                        <!--<input type="submit" value="Add" class="btn btn-default add-movie" />-->
+                                        <!--<input type="submit" value="Add" class="btn btn-default" />-->
                                         <!--<button type="button" class="btn btn-default">Add</button>-->
                                     <!--</span>-->
-                                </div>
-                            </form>
+                                <!--</div>-->
+                            <!--</form>-->
                         <!-- Marionette configured to list movies here-->
                         </ul>
                     </div>            
                 </div>  
 
-                
-                
+                              
                 <!--2nd col for 'Movie Details' using Panel component-->
-                <div class="col-xs-4">
+                <div class="col-xs-5">
                     <div class ="panel panel-success">
                         <div class="panel-heading">
                             <h1 class="panel-title">Details</h1>
@@ -107,28 +106,40 @@
                             <!--Marionette inserts detailed data here-->
                         </div>
                         <div class="panel-footer">
-                            <button type="button" class="btn btn-default btn-sm" onclick="notImplementedAlert()">Add To Wish List</button>
+                            <button type="button" class="btn btn-sm action-button" onclick="notImplementedAlert()">Add To Wish List</button>
                         </div>
                         
                     </div>
                 </div>
 
-                <!--3rd col for login form-->
-                <div class="col-xs-3">
-                    <!--<h4>Member Login</h4>-->
-                    <form class ="jumbotron">
+                <!--3rd col: Add new movie form-->
+                <div class="col-xs-4">
+                    <h5>Can't find your movie? Add it below..</h5>
+                    <form class ="well well-sm add-movie-form" role="form">
                         <div class="form-group">
-                           <label for="inputEmail">Email</label>
-                           <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                           <label for="title">Name</label>
+                           <input type="text" class="form-control" name="title" placeholder="Name of the movie">
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword">Password</label>
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                           <label for="description">Synopsis</label>
+                           <input type="text" class="form-control" name="description">
                         </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Remember me</label>
+                        <div class="form-group">
+                            <label for="year">Released Year</label>
+                            <select class="form-control" name="year">
+                                <option>2016</option>
+                                <option>2015</option>
+                                <option>2014</option>
+                                <option>2013</option>
+                                <option>2012</option>
+                                <option>2011</option>
+                                <option>2010</option>    
+                            </select>
                         </div>
-                        <button type="submit" class="btn btn-primary" onclick="notImplementedAlert()">Login</button>
+                        <span class="input-group-btn">
+                            <!--<input type="submit" value="Add" class="btn btn-default add-movie" />-->
+                            <input type="submit" class="btn action-button add" value="Add It Now">
+                        </span>
                     </form>
                 </div>
             </div> <!--end /row-/ myappLayoutView->

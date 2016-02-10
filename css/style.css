@@ -1,3 +1,9 @@
+.action-button {
+    background-color: #990000;
+    font-weight: bold;
+    color:white;
+}
+
 /*overriding bootstrap list-group-item styling*/
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
     z-index: 2;
@@ -6,13 +12,6 @@
     font-weight: bold;
 }
 
-.details{
-    width: 240px;
-    margin: 10px;
-    background-color: mediumblue;
-    color: black;
-    float: left;
-}
 
 body {
 	padding-top: 5em;

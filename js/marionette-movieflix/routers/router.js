@@ -1,3 +1,5 @@
+//This is not being used anywhere.. 
+
 /**
  * Purpose: Get view rendered and publish global listeners
  * 
@@ -43,7 +45,7 @@ define([
             });     
                   
             //3. instantiate button view and attach it to DOM element #movieFilixButton
-            this.addFormView = new AddFormView({el: $('#addForm')});          
+            this.addFormView = new AddFormView({el: $('#add-movie-form')});          
             
             //4. showing layoutview and views within region
             this.rootView = options.rootView;

@@ -3,6 +3,9 @@ define([
 ], function(Backbone){
     
     "use strict";
+    
+    var g_counter = 1;
+
     var Model = Backbone.Model.extend({
         defaults: {
             id: 0,
@@ -14,6 +17,8 @@ define([
         
         initialize: function(){
             //console.log("Initialize function called on movie!");
+            this.set("id", g_counter);
+            g_counter +=1;
         }
     });
     

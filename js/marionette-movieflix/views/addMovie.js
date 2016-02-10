@@ -14,9 +14,8 @@ define([
         },
         
         onSubmit: function(e) {
-            console.log("YEAH.. on submit called");
             e.preventDefault();
-            this.channel.trigger("add-movie", Backbone.Syphon.serialize(this));
+            this.channel.trigger("add-movie", Syphon.serialize(this));
         },      
     }); 
     

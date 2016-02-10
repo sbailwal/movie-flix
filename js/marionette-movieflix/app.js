@@ -26,8 +26,7 @@ define([
                 // handle UI events
                 this.channel.on("add-movie", this._onAddMovie.bind(this));
                 this.channel.on("display-detail",  this._displayDetailView.bind(this));
-                //$(document).on("add-movie", this._onAddMovie.bind(this));           
-                //$(document).on("display-detail", this._displayDetailView.bind(this));   
+ 
                          
                 //static data      
                 this.movies =[
@@ -51,10 +50,8 @@ define([
                         "description":"<p>Lorem ipsum dolor sit amet, vis et choro fuisset. </p><p>Magna aperiri conclusionemque per te. Ut ius possit eripuit ancillae, quo ignota possit ea, eam idque labore iisque id. Vide nobis in pro, melius platonem mnesarchum usu te.</p>"}
                 ];
                 
-                //2. instantiate collection
+                //instantiate collection
                 this.moviesCollection = new Collection(this.movies);
-                
-                console.log("App Initialization: collection initialized");
             }, //end initialize
             
             onBeforeStart: function (options) {

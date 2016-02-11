@@ -11,7 +11,8 @@ define([
         template: false,
         regions: {
             movieListRegion: "#movies",  //"movieListView: "#movies" or ul.list-group"
-            movieDetailRegion: "#details"
+            movieDetailRegion: "#details",
+            //movieAddRegion: "form.add-movie-form"            
             },
                         
         initialize: function(){  

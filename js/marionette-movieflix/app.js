@@ -58,20 +58,20 @@ define([
             onStart: function (options) {
                 console.log('App: onstart');
                 
-                //instantiate add form view to attach it to DOM element (form)
-                new AddFormView();
-
                 this.rootView = new RootLayoutView();
                 this.rootView.render();
               
                 this.rootView.movieListRegion.show(new MoviesListView({
                     collection: this.moviesCollection, 
                 })); 
-                                
+ 
+                 //instantiate add form view to attach it to DOM element (form)
+                new AddFormView();
+                //this.rootView.movieAddRegion.show(new AddFormView()); //WHY? CAN'T DO THIS, COMPLAINS AS IT'S TEMPLATE-LESS VIEW??
+                   
                 //Not using router as of now
                 // new Router({movies:movies});        
                 // if(Backbone.history){ Backbone.history.start(); }      
-
             },
             
             _onAddMovie: function(data) { //e = event, data = passed from the caller, i.e. html-element.js in our case

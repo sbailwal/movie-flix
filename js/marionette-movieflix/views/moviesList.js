@@ -8,10 +8,13 @@ define([
     var ViewList = Marionette.CollectionView.extend({     
         childView: MovieView,
         
-        initialize: function(){},
+        initialize: function(){
+            console.log('Movie CollectionView: initialize >>> ' + this.collection.length);
+        },
         
-        //reder called after all child views are initialized and rendered
-        onRender: function(){             
+        //render called after all child views are initialized and rendered
+        onRender: function(){      
+            console.log('Movie CollectionView: onRender >>> ' + this.collection.length);       
             //select first movie by default
             if(this.collection.length > 0){
                 this.collection.get(1).set({selected:true});       
@@ -19,7 +22,7 @@ define([
         },
             
         onShow: function(){ 
-            console.log('Movie CollectionView: onShow >>> ') 
+            console.log('Movie CollectionView: onShow >>> ' + this.collection.length); 
         }
     }); 
      return ViewList;

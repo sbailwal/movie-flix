@@ -19,9 +19,7 @@ define([
             e.preventDefault();
             this.channel.trigger("add-movie", Syphon.serialize(this));
         }
-
     }); 
-    
-    
+  
     return View;
 });

@@ -1,36 +1,43 @@
 //this is the root level layout view attached to application
 
 define([
-    "marionette",
-    "marionette-movieflix/views/movie-layout",
-    "marionette-movieflix/views/user-view"
-], function(Marionette, MovieLayout, UserView) {
+    "marionette"
+], function(Marionette) {
     
     "use strict";
     
     var Layout = Marionette.LayoutView.extend({
-        el: "#app",
+        el: "#movieFlixApp",
         template: false,
         regions: {
-            movieView: "#movie-view",
-            userView: "#user-view"    
-        },
-        
+            movieListRegion: "#movies",  //"movieListView: "#movies" or ul.list-group"
+            movieDetailRegion: "#details"
+            },
+                        
         initialize: function(){  
             console.log('RootLayoutView: initialized >>> ');
         },
-        //onBeforeRender
+        
+        onBeforeRender: function() {
+            console.log('RootLayoutView: onBeforeRender');
+            //this.movieView.show(new MovieLayout());    
+        },
+
         onRender: function() {
             console.log('RootLayoutView: onRender');
-            this.movieView.show(new MovieLayout());    
-            console.log('RootLayoutView: Render done');        
+            // this.movieView.show(new MovieLayout());    
         },
             
         onBeforeShow: function () {
             console.log("Main LayoutView: Before Show called");
-			this.showChildView("movieView", new MovieLayout(this.options));
-			this.showChildView("userView", new UserView(this.options));
-		}
+			//this.showChildView("movieListRegion", new MovieLayout(this.options));
+			//this.showChildView("movieDetailRegion", new UserView(this.options));
+		},
+        
+        onShow: function() {
+            console.log("Main LayoutView: onShow called");
+            //this.getRegion('movieListRegion').show(new notifyView());
+        }
     });
     
     return Layout;

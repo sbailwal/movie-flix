@@ -1,8 +1,11 @@
 //this is the root level layout view attached to application
 
 define([
-    "marionette"
-], function(Marionette) {
+    "marionette",
+    "marionette-movieflix/collections/movies",
+    "marionette-movieflix/views/moviesList",
+    "marionette-movieflix/views/addMovie"
+], function(Marionette, Collection, MoviesListView, AddFormView) {
     
     "use strict";
     
@@ -10,18 +13,28 @@ define([
         el: "#movieFlixApp",
         template: false,
         regions: {
-            movieListRegion: "#movies",  //"movieListView: "#movies" or ul.list-group"
-            movieDetailRegion: "#details",
-            //movieAddRegion: "form.add-movie-form"            
+            movieListRegion: "#region-movie-list",  //"movieListView: "#movies" or ul.list-group"
+            movieDetailRegion: "#region-movie-detail",
+            movieAddRegion: "#region-add-form" //"form.add-movie-form"            
             },
                         
         initialize: function(){  
             console.log('RootLayoutView: initialized >>> ');
+            
+            //instantiate and fetching movielist so that it's ready to be used
+            this.moviesCollection = new Collection();
+            this.moviesCollection.fetch();
         },
         
         onBeforeRender: function() {
             console.log('RootLayoutView: onBeforeRender');
-            //this.movieView.show(new MovieLayout());    
+
+            this.movieListRegion.show(new MoviesListView({
+                collection: this.moviesCollection, 
+            })); 
+ 
+            //instantiate and anchor it to an element in the DOM
+            this.movieAddRegion.show(new AddFormView());
         },
 
         onRender: function() {
@@ -30,13 +43,13 @@ define([
         },
             
         onBeforeShow: function () {
-            console.log("Main LayoutView: Before Show called");
+            console.log("RootLayoutView: Before Show called");
 			//this.showChildView("movieListRegion", new MovieLayout(this.options));
 			//this.showChildView("movieDetailRegion", new UserView(this.options));
 		},
         
         onShow: function() {
-            console.log("Main LayoutView: onShow called");
+            console.log("RootLayoutView: onShow called");
             //this.getRegion('movieListRegion').show(new notifyView());
         }
     });

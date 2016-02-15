@@ -64,77 +64,54 @@
                 <h3>Marionette Power <small>Grid System using List</small></h3>
             </div>
             
-            <!--Row 1: Body containing 4 columns-->          
-            <div class="row" id="movieFlixApp">  
-                <div class ="col-xs-10">
+            <!------------------------------->
+            <!--Marionette app starts here -->
+            <!------------------------------->
+            
+            <!--Row 1: Marionette: root layoutView anchors to #movieFlixApp id-->
+            <div class="row" id="movieFlixApp">  <!-- root LayoutView[region-movie & region-user] -->
+                
+                <!--Marionette: region1 anchors to #region-movie-->
+                <div class ="col-xs-10"  id="region-movie"> <!-- region-movie[layout-movie] -->
                     
-                    <!--1st col: movie list-->
-                    <div class="col-xs-4">
-                        <ul class="list-group" id="movies">
-                            <!-- Marionette configured to list movies here-->
-                        </ul>
-                    </div>  
-                                
-                    <!--2nd col for 'Movie Details' using Panel component-->
-                    <div class="col-xs-5">
-                        <div class ="panel panel-success">
-                            <div class="panel-heading">
-                                <h1 class="panel-title">Details</h1>
+                    <!--Marionette: region1->layout-movie anchors to #layout-movie-->
+                    <div id="layout-movie">  <!-- layout-movie[region-movie-list, region-movie-detail & region-add-form] -->
+                        <!--1st col: Actual view "Movie list" anchored to #region-movie-list -->
+                        <div class="col-xs-4" id="region-movie-list"></div>  
+                                    
+                        <!--2nd col: Actual view 'Movie Details' anchored to #region-movie-details id-->
+                        <div class="col-xs-5">
+                            <div class ="panel panel-success">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">Details</h1>
+                                </div>
+                                <div class="panel-body" id="region-movie-detail"></div>
                             </div>
-                            <div class="panel-body" id="details">
-                                <!--Marionette inserts detailed data here-->
-                            </div>
-                            <!--<div class="panel-footer">
-                                <button type="button" class="btn btn-sm action-button" onclick="notImplementedAlert()">Add To Wish List</button>
-                            </div>     -->
                         </div>
-                    </div>
 
-                    <!--3rd col: "Add new movie" form, layoutView listens to click events on '.add-movie', i.e. submit button-->
-                    <div class="col-xs-3">
-                        <div class ="panel panel-success">
-                            <div class="panel-heading">
-                                <h1 class="panel-title">Can't find? Add movie here</h1>
+                        <!--3rd col: Form view anchored to #region-add-form id-->
+                        <div class="col-xs-3">
+                            <div class ="panel panel-success">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">Can't find? Add movie here</h1>
+                                </div>
+                                <div class="panel-body" id="region-add-form"></div>
                             </div>
-                            <div class="panel-body">
-                                <form class ="well well-sm add-movie-form" role="form">
-                                    <div class="form-group">
-                                        <label for="title">Name</label>
-                                        <input type="text" class="form-control" name="title" placeholder="Name of the movie" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="description">Synopsis</label>
-                                        <textarea class="form-control" name="description" rows="3" placeholder="Lorem ipsum dolor sit amet, vis et choro fuisset"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="year">Released Year</label>
-                                        <select class="form-control" name="year">
-                                            <option>2016</option>
-                                            <option>2015</option>
-                                            <option>2014</option>
-                                            <option>2013</option>
-                                            <option>2012</option>
-                                            <option>2011</option>
-                                            <option>2010</option>    
-                                        </select>
-                                    </div>
-                                    <span class="input-group-btn">
-                                        <!--<input type="submit" value="Add" class="btn btn-default add-movie" />-->
-                                        <input type="submit" class="btn action-button add-movie" value="Add It Now">
-                                    </span>
-                                </form>
-                            </div> <!--end panel body -->
                         </div>
-                    </div>
-                    
-                    
-                </div>
-                <!-- column 4 for user stuff -->  
-                <div class="col-xs-2">
+                        
+                    </div> <!--layout-movie ends -->
+                </div> <!--region-movie ends -->
+                
+                <!---------------------------------->
+                <!--TBD: Marionette implementation-->
+                <!---------------------------------->
+                
+                <!--Marionette: region2 anchors to #region-user-->  
+                <div class="col-xs-2" id="region-user"> <!-- region-user[none] -->
                     <div class ="panel panel-warning">
                         <div class="panel-heading">
-                                <h1 class="panel-title">Registered Users</h1>
-                            </div>
+                            <h1 class="panel-title">Registered Users</h1>
+                        </div>
                         <div class="panel-body">
                             <p>Complete list of all registered users.</p> <p>Join the force, if you are not here!</p>
                             <ul class="list-group" id="wishlist">
@@ -151,12 +128,10 @@
                             </ul>
                         </div>
                     </div> 
-                </div>  
+                </div>  <!--region-user ends-->
               
-             
             </div> <!--end Row 1>
-            
-            
+            <!--marionette app ends here-->
             
             
             <!--Row 2: footer-->
@@ -180,4 +155,4 @@
     </body>
  
  </html>
-      
+ 

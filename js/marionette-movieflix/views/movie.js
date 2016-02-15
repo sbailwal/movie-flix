@@ -38,7 +38,7 @@ define([
             this.$el.toggleClass('active', this.model.get('selected'));
             
             if(this.model.get("selected")) {
-                this.channel.trigger("display-detail", this.model);
+                this.channel.trigger("display-detail", {"model":this.model});
                 //$(document).trigger("display-detail", this.model);
             }    
         }

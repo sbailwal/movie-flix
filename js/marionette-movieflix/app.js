@@ -1,16 +1,9 @@
-/**
- * Purpose is to instantiate "Router" and pass an array(static data) to it.
- */
-
 define([
 	"marionette",
-    "backbone.radio",
-    "marionette-movieflix/collections/movies",
-    "marionette-movieflix/views/moviesList",
-    "marionette-movieflix/views/addMovie",
+    "backbone.radio",    
     "marionette-movieflix/views/detail",
     "marionette-movieflix/views/layout" 
-], function (Marionette, Radio, Collection, MoviesListView, AddFormView, DetailView, RootLayoutView) {     
+], function (Marionette, Radio, DetailView, RootLayoutView) {     
         "use strict";
 
         //creating a marionette application 
@@ -23,10 +16,6 @@ define([
                 // handle UI events
                 this.channel.on("add-movie", this._onAddMovie.bind(this));
                 this.channel.on("display-detail",  this._displayDetailView.bind(this));
-                 
-                //instantiate and fetching movielist so that it's ready to be used
-                this.moviesCollection = new Collection();
-                this.moviesCollection.fetch();
 
             }, //end initialize
             
@@ -35,31 +24,23 @@ define([
                 
                 this.rootView = new RootLayoutView();
                 this.rootView.render();
-                 
-                this.rootView.movieListRegion.show(new MoviesListView({
-                    collection: this.moviesCollection, 
-                })); 
- 
-                 //instantiate and anchor it to an element in the DOM
-                new AddFormView();
-                //this.rootView.movieAddRegion.show(new AddFormView()); //WHY? CAN'T DO THIS, COMPLAINS AS IT'S TEMPLATE-LESS VIEW??
                    
                 //Not using router as of now
                 // new Router({movies:movies});        
                 // if(Backbone.history){ Backbone.history.start(); }      
             },
             
-            _onAddMovie: function(data) { //e = event, data = passed from the caller, i.e. html-element.js in our case
-                $(".form-control").val("");
-                this.moviesCollection.add(data); //id attribute handled by the model
+            _onAddMovie: function(options) {
+                $(".form-control").val(""); //oops, resets data dropdown too. Will fix this later
                 
-                //set newly added movie as selected on UI
-                this.moviesCollection.selectByID(this.moviesCollection.last().get("id")); 
+                var collection = this.rootView.moviesCollection;
+                collection.add(options.data); //id attribute handled by the model 
+                collection.selectByID(collection.last().get("id"));  //set newly added movie as selected on UI
             },
             
-            _displayDetailView: function(data) {
+            _displayDetailView: function(options) {
                 this.rootView.movieDetailRegion.show(new DetailView({
-                    model:data
+                    model:options.model
                 }));       
             }            
         });

@@ -6,6 +6,8 @@ define([
     "use strict";
    
     var ViewList = Marionette.CollectionView.extend({     
+        tagName: 'ul', 
+        className: 'list-group', //this is a bootstrap css class
         childView: MovieView,
         
         initialize: function(){

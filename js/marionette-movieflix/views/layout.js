@@ -12,7 +12,7 @@ define([
         template: false,
         regions: {
             movieRegion: "#region-movie",
-            userRegion: "#region-user",
+            userRegion: "#region-user"
             },
                         
         initialize: function(){  

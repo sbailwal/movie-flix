@@ -15,18 +15,7 @@ define([
         },
         
         initialize: function(){  
-            //console.log('Movie ItemView: initialized >>> ' + this.model.get('title'));
-            
-            //listenting to model changes, and then reacting to it
             this.listenTo(this.model, 'change:selected', this._setSelected); //data binding/ event listener
-        },
-        
-        onRender: function(){ 
-            //console.log('Movie ItemView: onRender >>> ' + this.model.get('title')) 
-        },
-            
-        onShow: function(){ 
-            //console.log('Movie ItemView: onShow >>> ' + this.model.get('title')) 
         },
                 
         _selectMovie: function(event) {
@@ -39,7 +28,6 @@ define([
             
             if(this.model.get("selected")) {
                 this.channel.trigger("display-detail", {"model":this.model});
-                //$(document).trigger("display-detail", this.model);
             }    
         }
     });   

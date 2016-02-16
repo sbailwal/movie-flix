@@ -15,7 +15,7 @@ define([
                 // this.channel.on("display-detail",  this._displayDetailView.bind(this));
             }, 
             
-            onStart: function (options) {
+            onStart: function () {
                 console.log('App: onstart');
                 
                 this.rootView = new RootLayoutView();

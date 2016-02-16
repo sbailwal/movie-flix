@@ -16,6 +16,5 @@ require([
     ], function(App){
         
         "use strict";
-        console.log("config loaded");
         new App().start();
 });

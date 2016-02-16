@@ -32,7 +32,7 @@ define([
             
         onBeforeShow: function () {
 			this.showChildView("movieListRegion", new MoviesListView({
-                collection: this.moviesCollection, 
+                collection: this.moviesCollection
             })); 
 			this.showChildView("movieAddRegion", new AddFormView());
 		},

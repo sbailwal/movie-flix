@@ -10,11 +10,7 @@ define([
         model: Model, 
         url: '/../mock-data/movies.json',
         
-        initialize: function(){
-            this.on('add', function(data) {
-                //console.log("Collection is silently listening: New item added");
-            });
-            
+        initialize: function(){         
             this.on('sync', this.finishSync);
         },     
         
@@ -22,8 +18,6 @@ define([
         
         //select first movie by default
         finishSync: function() {
-            console.log("AFTER sync: " + Date.now());
-            
             if(this.length > 0){
                 this.get(1).set({selected:true});       
             }
@@ -38,7 +32,6 @@ define([
         
         //select a specific model, unselect all others
         selectByID: function(id) {
-            //console.log("selectByID called from collection:" );
             this.resetSelected();
             var model = this.get(id);
             model.set({selected: true});

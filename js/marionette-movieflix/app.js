@@ -1,14 +1,18 @@
 define([
 	"marionette",
     "backbone.radio",    
+    "marionette-movieflix/routers/router",
     "marionette-movieflix/views/layout" 
-], function (Marionette, Radio, RootLayoutView) {     
+], function (Marionette, Radio, Router, RootLayoutView) {     
         "use strict";
 
         var App = Marionette.Application.extend({
             channel: Radio.channel("global"),
             
             initialize: function(){
+                new Router;  
+                if(Backbone.history){ Backbone.history.start(); } 
+                
                 // console.log("App Initialization");    
                 // handle UI events
                 // this.channel.on("add-movie", this._onAddMovie.bind(this));
@@ -17,13 +21,9 @@ define([
             
             onStart: function () {
                 console.log('App: onstart');
-                
+                           
                 this.rootView = new RootLayoutView();
                 this.rootView.render();
-                   
-                //Not using router as of now
-                // new Router({movies:movies});        
-                // if(Backbone.history){ Backbone.history.start(); }      
             }          
         });
         return App;

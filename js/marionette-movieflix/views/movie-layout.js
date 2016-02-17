@@ -22,7 +22,8 @@ define([
             },
                         
         initialize: function(){  
-            this.channel.on("add-movie", this._onAddMovie.bind(this));           
+            this.channel.on("add-movie", this._onAddMovie.bind(this));        
+            this.channel.on("delete-movie", this._onDeleteMovie.bind(this));   
             this.channel.on("display-detail",  this._displayDetailView.bind(this));
             
             //instantiate and fetch movielist so that it's ready to be used
@@ -40,11 +41,21 @@ define([
         _onAddMovie: function(options) {
             $(".form-control").val(""); //oops, resets data dropdown too. Will fix this later
             
-            var collection = this.moviesCollection;
-            collection.add(options.data); 
-            collection.selectByID(collection.last().get("id"));
+            this.moviesCollection.add(options.data); 
+            this.moviesCollection.selectByID(this.moviesCollection.last().get("id"));
         },
             
+        _onDeleteMovie: function(options) {
+            this.moviesCollection.remove(options.model);
+            
+            //this is to keep the first in the list selected after each deletion
+            if(this.moviesCollection.length > 0) {
+                this.moviesCollection.selectByID(this.moviesCollection.first().get("id"));
+            } else {
+                this.getRegion("movieDetailRegion").reset();
+            }
+        },
+        
         _displayDetailView: function(options) {
             this.showChildView("movieDetailRegion", new DetailView({
                 model:options.model

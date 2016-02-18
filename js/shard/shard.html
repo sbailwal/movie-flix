@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Movie Flix - Shard selection</title>
+        <link href="/../bower_components/bootstrap/dist/css/flatly-bootswatch.min.css" rel="stylesheet">
+    </head>
+    
+    <body>
+
+        <!----------------------------------->
+        <!--Adding Shard selection feature -->
+        <!----------------------------------->
+        <div class="container" id ="app">
+            <div id="app">
+                <form class="form">
+                    <div class="modal fade in" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" style="display: block; padding-left: 21px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Which MovieFlix environments do you want to access</h4>
+                                </div>
+                                <div class="modal-body form-group">
+                                    <div id="region-select"></div>                                   
+                                    <div class="checkbox"> 
+                                        <label> <input name="isDefault" type="checkbox"> Make this my default and don't ask again </label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary select-shard-btn">Select Shard</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </form>
+            </div> 
+        </div>
+        
+        <script data-main="/../js/config-shard" src="/../bower_components/requirejs/require.js"></script>
+    </body>
+
+</html>

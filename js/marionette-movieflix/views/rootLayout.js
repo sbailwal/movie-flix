@@ -2,7 +2,7 @@
 
 define([
     "marionette",
-    "marionette-movieflix/views/movie-layout"
+    "marionette-movieflix/views/movieLayout"
 ], function(Marionette, MovieLayout) {
     
     "use strict";

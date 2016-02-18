@@ -36,7 +36,7 @@ define([
                 Marionette.ItemView.prototype.constructor.apply(this,arguments);
             }
         });
-        // <select  class="form-control shard-select" name="shard"></select>   
+           
         //Select View
         var SelectView = Marionette.CollectionView.extend({
             tagName: 'select', 

@@ -1,11 +1,12 @@
 define([
 	"marionette",
     "backbone.radio",    
-    "shard/views/form"
-], function (Marionette, Radio, Form) {     
+    //"shard/views/form",
+    "syphon"
+], function (Marionette, Radio, Syphon) {     
         "use strict";
 
-        //model
+        //----------model
         var Model = Backbone.Model.extend({
             defaults: {
                 id: "",
@@ -14,7 +15,7 @@ define([
             }
         });
         
-        //collection
+        //-----------collection
         var Collection = Backbone.Collection.extend({
             model: Model,
             url: '/../mock-data/shard.json',
@@ -24,7 +25,7 @@ define([
             },              
         });
         
-        //Option View
+        //---------Option View
         var OptionView = Marionette.ItemView.extend({
             tagName: 'option', 
             className: 'shardOption', 
@@ -37,7 +38,7 @@ define([
             }
         });
            
-        //Select View
+        //----------Select View
         var SelectView = Marionette.CollectionView.extend({
             tagName: 'select', 
             className: 'form-control shard-select', 
@@ -50,7 +51,7 @@ define([
             }
         })
         
-        //RootLayoutView
+        //----------RootLayoutView
         var RootLayoutView = Marionette.LayoutView.extend({
             el: "#app",
             template: false,
@@ -69,24 +70,32 @@ define([
                     collection: this.collection
                 })); 
                 
-                new Form(); //not attaching this to any region. Just want to handle the submit
-            }    
+                //Note: To use form, uncomment this and comment "$('#shard-form').submit..." in app.onStart
+                // new Form(); //not attaching this to any region. Just want to handle the submit
+            },
+            onBeforeDestroy: function(){
+                console.log("App is closing");
+            } 
         });
         
-        //App    
+        //-----------App    
         var App = Marionette.Application.extend({
             channel: Radio.channel("global"),
             initialize: function(){
-                this.channel.on("submit", this.onSubmit.bind(this));               
+                this.channel.on("submit", this.onSubmit.bind(this));                                      
                 if(Backbone.history){ Backbone.history.start(); } 
             }, 
             
             onStart: function () {
                 console.log('App: onstart');
-                     
+               //using jquery to listen to form submit, instead of creating form.js and having it trigger event         
+                $('#shard-form').submit(function(ev) {
+                    ev.preventDefault(); 
+                    Radio.channel("global").trigger("submit", Syphon.serialize(this));
+                });
+                                    
                this.rootView = new RootLayoutView();
-               this.rootView.render();
-                console.log('App: onstart');     
+               this.rootView.render();  
             },
             
             onSubmit: function (model) {

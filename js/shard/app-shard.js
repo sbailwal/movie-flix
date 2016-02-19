@@ -88,14 +88,18 @@ define([
             
             onStart: function () {
                 console.log('App: onstart');
-               //using jquery to listen to form submit, instead of creating form.js and having it trigger event         
-                $('#shard-form').submit(function(ev) {
-                    ev.preventDefault(); 
-                    Radio.channel("global").trigger("submit", Syphon.serialize(this));
-                });
                                     
                this.rootView = new RootLayoutView();
                this.rootView.render();  
+               
+                //using jquery to listen to form submit, instead of creating form.js and having it trigger event
+               $(document).ready(function(){
+
+                $('#shard-form').submit(function(ev) {
+                    ev.preventDefault(); 
+                    Radio.channel("global").trigger("submit", Syphon.serialize(this));
+                });              
+               });
             },
             
             onSubmit: function (model) {

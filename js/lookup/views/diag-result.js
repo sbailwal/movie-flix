@@ -15,11 +15,7 @@ define([
 		tagName: "table",
 		className: "table table-striped table-bordered table-hover",
 		childView: RowView,
-        template: _.template("<thead><tr><th>Code</th><th>Description</th><th>Type</th><th>Category</th><th>Category Desc</th><th>Benefit Year</th></tr></thead>"),
-        
-		initialize: function () {
-			console.log("SB: Table has been initialized");
-		}
+        template: _.template("<thead><tr><th>Code</th><th>Description</th><th>Type</th><th>Category</th><th>Category Desc</th><th>Benefit Year</th></tr></thead>")
 	});
 
 	return Table;

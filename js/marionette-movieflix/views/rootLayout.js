@@ -11,8 +11,7 @@ define([
         el: "#movieFlixApp",
         template: false,
         regions: {
-            movieRegion: "#region-movie",
-            userRegion: "#region-user"
+            movie: "#region-movie",
             },
                         
         initialize: function(){  
@@ -21,7 +20,7 @@ define([
         
         onBeforeRender: function() {
             console.log('RootLayoutView: onBeforeRender');
-            this.movieRegion.show(new MovieLayout());
+            this.movie.show(new MovieLayout());
         }
     });
     return Layout;

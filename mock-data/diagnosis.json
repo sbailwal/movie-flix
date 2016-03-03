@@ -1,0 +1,130 @@
+ [
+		{
+			"code": "142.0",
+			"desc": "Malignant neoplasm of parotid gland",
+			"type": "ICD9",
+			"cat": "HCC11",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2015
+		},
+		{
+			"code": "142",
+			"desc": "Malignant neoplasm of major salivary glands",
+			"type": "ICD9",
+			"cat": "HCC11",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2015
+		},
+		{
+			"code": "123",
+			"desc": "Neoplasm of major salivary glands",
+			"type": "ICD10",
+			"cat": "HCC81",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2014
+		},
+		{
+			"code": "354.34",
+			"desc": "Malignant salivary glands",
+			"type": "ICD9",
+			"cat": "HCC44",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2012
+		},
+		{
+			"code": "142",
+			"desc": "Salivary glands",
+			"type": "ICD10",
+			"cat": "HCC86",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2014
+		},
+		{
+			"code": "142",
+			"desc": "Glands malignant neoplasm of major salivary",
+			"type": "ICD9",
+			"cat": "HCC21",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2015
+		},
+		{
+			"code": "142",
+			"desc": "Malignant major salivary glands",
+			"type": "ICD10",
+			"cat": "HCC11",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2015
+		},
+		{
+			"code": "876.11",
+			"desc": "Mjor salivary glands",
+			"type": "ICD10",
+			"cat": "HCC31",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2015
+		},
+		{
+			"code": "142.97",
+			"desc": "Malignant neoplasm of major salivary glands",
+			"type": "ICD9",
+			"cat": "HCC11",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2015
+		},
+		{
+			"code": "142",
+			"desc": "Malignant neoplasm of major salivary glands",
+			"type": "ICD9",
+			"cat": "HCC11",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2015
+		},
+		{
+			"code": "142.33",
+			"desc": "Malignant neoplasm of major salivary glands",
+			"type": "ICD9",
+			"cat": "HCC31",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2014
+		},
+		{
+			"code": "142",
+			"desc": "Malignant neoplasm of major salivary glands",
+			"type": "ICD10",
+			"cat": "HCC11",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2015
+		},
+		{
+			"code": "634",
+			"desc": "Malignant neoplasm of major salivary glands",
+			"type": "ICD9",
+			"cat": "HCC11",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2014
+		},
+		{
+			"code": "425.66",
+			"desc": "Malignant neoplasm of major salivary glands",
+			"type": "ICD10",
+			"cat": "HCC11",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2015
+		},
+		{
+			"code": "142",
+			"desc": "Malignant neoplasm of major salivary glands",
+			"type": "ICD9",
+			"cat": "HCC11",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2014
+		},
+		{
+			"code": "142",
+			"desc": "Malignant neoplasm of major salivary glands",
+			"type": "ICD9",
+			"cat": "HCC11",
+			"catDesc": "Colorectal, Breast (Age < 50), Kidney, and Other Cancers",
+			"benefitYr": 2015
+		}
+	]

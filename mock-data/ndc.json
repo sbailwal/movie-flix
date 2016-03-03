@@ -1,0 +1,24 @@
+[
+    {
+        "code": "123432320",
+        "strength": 30,
+        "unit": "MG/5ML",
+        "rxOTC": "O",
+        "name": "CORONA OIN 30",
+        "genericName": "Lanolin Oint 30",
+        "HIVInd": 0,
+        "ndcFDA": null,
+        "endDt": null
+    },
+    {
+        "code": "185642350",
+        "strength": 5,
+        "unit": "MG/5ML",
+        "rxOTC": "P",
+        "name": "LANTISEPTIC CRE THERAPEU",
+        "genericName": "Lanolin Oint 30",
+        "HIVInd": 0,
+        "ndcFDA": null,
+        "endDt": null
+    }
+]

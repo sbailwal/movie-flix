@@ -1,16 +1,16 @@
 define([
     "marionette",
     "backbone.radio",
-	"lookup/collections/diagnosis",
-	"lookup/views/diag-form",
-    "lookup/views/diag-result",
+	"lookup/collections/ndc",
+	"lookup/views/ndc/form",
+    "lookup/views/ndc/result",
 ], function(Marionette, Radio, Collection, FormView, ResultView) {
 
     "use strict";
 
     var Layout = Marionette.LayoutView.extend({
         channel: Radio.channel("global"),
-        el: "#layout-diag",
+        el: "#layout-lookup",
         template: false,
         regions: {
             form: "#form",

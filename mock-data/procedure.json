@@ -1,0 +1,16 @@
+[
+    {
+        "code": "00104",
+        "desc": "Anesth electroshock",
+        "type": "CPT4",
+        "model": "V2015",
+        "benefitYr": 2015
+    },
+    {
+        "code": "T1026",
+        "desc": "Ped compr care pkg, per hour",
+        "type": "HCPCSII",
+        "model": "V2015",
+        "benefitYr": 2015
+    }
+]

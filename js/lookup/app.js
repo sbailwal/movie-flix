@@ -1,6 +1,6 @@
 define([
 	"marionette",
-    "lookup/views/diag-layout" 
+    "lookup/views/procedure/layout" 
 ], function (Marionette, LayoutView) {     
         "use strict";
 

@@ -1,7 +1,7 @@
 define([
     "marionette",
     "backbone.radio",
-    "syphon"
+    "backbone.syphon"
 ], function(Marionette, Radio, Syphon) {
 
    "use strict";

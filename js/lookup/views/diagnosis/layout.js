@@ -10,8 +10,8 @@ define([
 
     var Layout = Marionette.LayoutView.extend({
         channel: Radio.channel("global"),
-        el: "#layout-lookup",
-        template: false,
+        el: "#app",
+        template: _.template("<div class =\"col-xs-4\" id=\"form\"></div><div class=\"col-xs-8\" id=\"result\"></div>"),
         regions: {
             form: "#form",
             result: "#result"
@@ -21,14 +21,15 @@ define([
             this.channel.on("search", this._search.bind(this));
         },
         
-        //always use onBeforeRender for rootLayoutView. Any other view, use onBeforeShow
-        onBeforeRender: function () {
+        //root layout view must call it's child view onRender, as template creates DOM elements here
+        onRender: function () {
+			console.log("Root layout view renders template/DOM here:" + $("#form").length);
 			this.showChildView("form", new FormView());
 		},
-
+        
         _search: function(options) {
-            $(".form-control").val("");
-            console.log("This search has been called: " + JSON.stringify(options.data));
+            this.$(".form-control").val("");
+            console.log("User entered data: " + JSON.stringify(options.data));
             
             //Not the best way but just to test it works
             this.collection = new Collection();

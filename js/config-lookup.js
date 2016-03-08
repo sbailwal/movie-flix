@@ -5,8 +5,9 @@ require.config({
         underscore: "../bower_components/underscore/underscore",
         backbone: "../bower_components/backbone/backbone",
         marionette:"../bower_components/backbone.marionette/lib/backbone.marionette.min",
-        syphon: "../bower_components/backbone.syphon/lib/backbone.syphon",
-        "backbone.radio": "../bower_components/backbone.radio/build/backbone.radio"
+        "backbone.syphon": "../bower_components/backbone.syphon/lib/backbone.syphon",
+        "backbone.radio": "../bower_components/backbone.radio/build/backbone.radio",
+        "backbone.forms": "../bower_components/backbone-forms/distribution/backbone-forms"
     }
 });
 

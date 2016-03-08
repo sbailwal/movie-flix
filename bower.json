@@ -26,6 +26,7 @@
     "bootstrap": "~3.3.6",
     "backbone.marionette": "~2.4.4",
     "backbone.syphon": "~0.6.3",
-    "backbone.radio": "~1.0.2"
+    "backbone.radio": "~1.0.2",
+    "backbone-forms": "^0.14.1"
   }
 }

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Movie Flix - A place for all your movies</title>
+        
+        <!-- Bootstrap core CSS, finally making it a bootstrap template! -->
+        <!--<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+        <!--<link href="../bower_components/bootstrap/dist/css/journal-bootswatch.min.css" rel="stylesheet">-->
+        <link href="/../bower_components/bootstrap/dist/css/flatly-bootswatch.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/../css/style.css" type="text/css">        
+    </head>
+    
+    <body>
+        <!--Step 1: Adding navigation bar-->
+        <!--SB Note: Move this to some common area-->
+        <nav id="myNavbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                
+                <!--For narrow screen width, toggle drop down will show up on top right hand corner-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="sr-only">Toggle navigation</span> 
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="http://localhost:8080" class="pull-left"><img src="/image/movieflix.png" class="img-circle" width="80px"></a>
+                </div>
+                
+                <!--Navigation items listed here-->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="http://localhost:8080">Home</a></li>
+                        <li><a href="/js/backbone-movieflix/list-movies.html">Backbone - Movies</a></li>  
+                        <li><a href="/js/marionette-movieflix/list-movies.html">Marionette - Movies</a></li>                                              
+                        <li><a href="/js/shard/shard.html">Shard Selection</a></li>
+                        <li class="active"><a href="/js/lookup/lookup.html">Lookup</a></li>
+                    </ul>
+                    <!--Adding search button to nav-bar-->
+                    <div class="col-sm-3 col-md-3 pull-right">
+                        <form class="navbar-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="search-term" id="search-term">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" onclick="notImplementedAlert()">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>
+                            </div>      
+                        </form>
+                    </div>                    
+                    
+                </div>
+            </div> <!--end /container -->
+        </nav>
+        <!--End of Step 1: Nav bar-->
+    
+    
+<!--TO TEST OUT SELECT OPTIONS-->
+<div class="row">
+     <div class="col-xs-2">
+     </div>
+    <div class="col-xs-10">
+        <form class="form-inline">
+            <div class="input-group">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search&hellip;">
+                    <select class='form-control' name='criteria'>
+                        <option value='code'>Code</option>
+                        <option value='desc'>Description</option>
+                        <option value='cat'>Category</option>
+                        <option value='catDesc'>Category Description</option>
+                    </select>
+                    
+                    <input type='submit' class='btn action-button' value='Search'>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+        <!--Step 2: Adding Marionette grid system to display data-->
+        <div class="container-fluid">
+            <div class="page-header">
+                <h3>Lookup: Code Search <br><small>Look it up</small></h3>
+            </div> 
+
+            <!--Marionette app starts here -->
+            
+            <!--Row 1: Marionette: root layoutView-->
+            <div class="row">
+                <div class ="col-xs-12"  id="layout-lookup">
+                    <div class ="col-xs-4"  id="form"> </div>
+                    <div class ="col-xs-8"  id="result"> </div>
+                </div>                  
+            </div> <!--end Row 1>
+                   
+            <!--marionette app ends here-->
+            
+            <!--Row 2: footer-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <footer>
+                        <small>&copy; Copyright 2016 Movie Flix Inc.</small>
+                    </footer>
+                </div>
+            </div>
+        </div>  <!-- end div=container -->
+                                
+        <!--Adding require.js for AMD: root set in data-main=/movie-flix-->
+        <script data-main="/../js/config-lookup" src="/../bower_components/requirejs/require.js"></script>
+    </body>
+ 
+ </html>
+ 

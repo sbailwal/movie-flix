@@ -39,7 +39,7 @@ define([
 		},
         
         _onAddMovie: function(options) {
-            $(".form-control").val(""); //oops, resets data dropdown too. Will fix this later
+            this.$(".form-control").val(""); //oops, resets data dropdown too. Will fix this later
             
             this.moviesCollection.add(options.data); 
             this.moviesCollection.selectByID(this.moviesCollection.last().get("id"));

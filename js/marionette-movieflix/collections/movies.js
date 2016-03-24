@@ -9,7 +9,7 @@ define([
     var Collection = Backbone.Collection.extend({
         model: Model, 
         url: '/../mock-data/movies.json',
-        
+        // url: "http://www.omdbapi.com/?t=Fr&y=&plot=short&r=json",
         initialize: function(){         
             this.on('sync', this.finishSync);
         },     

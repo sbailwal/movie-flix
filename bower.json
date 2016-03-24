@@ -27,6 +27,7 @@
     "backbone.marionette": "~2.4.4",
     "backbone.syphon": "~0.6.3",
     "backbone.radio": "~1.0.2",
-    "backbone-forms": "^0.14.1"
+    "backbone-forms": "^0.14.1",
+    "datatables.net": "^1.10.11"
   }
 }

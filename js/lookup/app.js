@@ -45,7 +45,7 @@
 
 define([
 	"marionette",
-    "lookup/views/diagnosis/layout" 
+    "lookup/views/ndc/layout" 
 ], function (Marionette, LayoutView) {     
     "use strict";
 
@@ -58,6 +58,7 @@ define([
         }, 
         
         onStart: function () {
+  
             this.layoutView = new LayoutView();
             this.layoutView.render();
         }          

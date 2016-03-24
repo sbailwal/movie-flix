@@ -7,7 +7,7 @@ define([
 	//table row view
 	var RowView = Marionette.ItemView.extend({
 		tagName: "tr",
-		template: _.template("<td><%= code%></td><td><%= strength%></td><td><%= unit%></td><td><%= rxOTC%></td><td><%= name%></td><td><%= genericName%></td><td><%= HIVInd%></td><td><%= ndcFDA%></td><td><%= endDt%></td>")
+		template: _.template("<td><%= code%></td><td><%= strength%></td><td><button class=\"btn btn-primary\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapseExample\" aria-expanded=\"false\" aira-controls=\"collapseExample\"><%= unit%></button></td><td><a class=\"btn btn-primary\" data-toggle=\"collapse\" href=\"#collapseExample\" aria-expanded=\"false\" aria-controls=\"collapseExample\"><%= rxOTC%></a></td><td><%= name%></td><td><%= genericName%></td><td><%= HIVInd%></td><td><%= ndcFDA%></td><td><%= endDt%></td>")
 	});
 
 	//table view

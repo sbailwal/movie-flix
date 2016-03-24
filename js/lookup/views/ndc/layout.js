@@ -1,10 +1,11 @@
 define([
     "marionette",
     "backbone.radio",
+    "dataTables",
 	"lookup/collections/ndc",
 	"lookup/views/ndc/form",
-    "lookup/views/ndc/result",
-], function(Marionette, Radio, Collection, FormView, ResultView) {
+    "lookup/views/ndc/result"
+], function(Marionette, Radio, DataTables, Collection, FormView, ResultView) {
 
     "use strict";
 
@@ -26,7 +27,7 @@ define([
 			console.log("Root layout view renders template/DOM here:" + $("#form").length);
 			this.showChildView("form", new FormView());
 		},
-
+        
         _search: function(options) {
             this.$(".form-control").val("");
             console.log("User entered data: " + JSON.stringify(options.data));
@@ -37,8 +38,8 @@ define([
             
             this.showChildView("result", new ResultView({
                 collection: this.collection
-            }));         
-        }, 
+            }));       
+        } 
 	});
 
     return Layout;

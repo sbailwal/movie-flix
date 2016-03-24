@@ -1,8 +1,9 @@
 define([
     "marionette",
     "backbone.radio",
-    "backbone.syphon"
-], function(Marionette, Radio, Syphon) {
+    "backbone.syphon",
+    "lookup/behaviors/submit"
+], function(Marionette, Radio, Syphon, SubmitBehavior) {
 
    "use strict";
 
@@ -12,15 +13,19 @@ define([
         className: "well well-sm",
 
         template: _.template("<div class='form-group'><label for='code'>National Drug Code</label><input type='text' class='form-control' name='code'></div><div class='form-group'><label for='name'>Trade Name</label><input type='text' class='form-control' name='name'></div><div class='form-group'><label for='genericName'>Generic Name</label><input type='text' class='form-control' name='genericName'></div><span class='input-group-btn'><input type='submit' class='btn action-button' value='Search'></span>"),
+        
+        behaviors: [
+            { behaviorClass: SubmitBehavior }
+        ]
+        
+        // events: {
+        //     "submit": "onSubmit"
+        // },
 
-        events: {
-            "submit": "onSubmit"
-        },
-
-        onSubmit: function(e) {
-            e.preventDefault();
-            this.channel.trigger("search", {"data":Syphon.serialize(this)});
-        }
+        // onSubmit: function(e) {
+        //     e.preventDefault();
+        //     this.channel.trigger("search", {"data":Syphon.serialize(this)});
+        // }
     });
 
     return View;

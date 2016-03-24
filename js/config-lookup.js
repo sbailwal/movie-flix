@@ -7,7 +7,8 @@ require.config({
         marionette:"../bower_components/backbone.marionette/lib/backbone.marionette.min",
         "backbone.syphon": "../bower_components/backbone.syphon/lib/backbone.syphon",
         "backbone.radio": "../bower_components/backbone.radio/build/backbone.radio",
-        "backbone.forms": "../bower_components/backbone-forms/distribution/backbone-forms"
+        "backbone.forms": "../bower_components/backbone-forms/distribution/backbone-forms",
+        "dataTables": "../bower_components/datatables.net/js/jquery.dataTables"
     }
 });
 
